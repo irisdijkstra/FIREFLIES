@@ -1,2 +1,11 @@
-<h1>Fireflies#show</h1>
-<p>Find me in app/views/fireflies/show.html.erb</p>
+
+<p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
+<p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
+<p><strong>Send to: </strong> <br><%= @firefly.email_recipient %></p>
+
+<p><strong>Letter: </strong> <br><%= @firefly.message.letter %></p>
+<p><strong>Photo: </strong> <br><%= @firefly.message.image %></p>
+<p><strong>Video: </strong> <br><%= @firefly.message.video %></p>
+<p><strong>Audio: </strong> <br><%= @firefly.message.audio %></p>
+
+<%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

@@ -14,15 +14,16 @@ User.destroy_all
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Creating 10 seeds...'
+first_name = ["paola", "ana", "iris", "evgeniya", "danko"]
+index = 0;
 
-10.times do
-  first_name = Faker::Name.first_name
+5.times do
   date = Faker::Date.between(from: '2021-03-07', to: '2025-03-07')
 
   user = User.new(
-    first_name: first_name,
+    first_name: first_name[index],
     last_name: Faker::Name.last_name,
-    email: "#{first_name}@firefly.com",
+    email: "#{first_name[index]}@firefly.com",
     password: 111111
   )
   user.save!
@@ -43,6 +44,7 @@ puts 'Creating 10 seeds...'
     message_id: message.id
   )
   firefly.save!
+  index = index + 1
 end
 
 puts ""
