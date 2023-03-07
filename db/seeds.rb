@@ -1,11 +1,17 @@
-require "faker"
+require 'faker'
 
+# Destroy all seeds first before craeting new ones
+Firefly.destroy_all
+Message.destroy_all
+User.destroy_all
 
 puts 'Creating 10 seeds...'
-first_name = ["paola", "ana", "iris", "evgenia", "danko"]
-index = 0;
+first_name = ["paola", "ana", "iris", "evgeniya", "danko"]
+index = 0
+
 5.times do
   date = Faker::Date.between(from: '2021-03-07', to: '2025-03-07')
+
   user = User.new(
     first_name: first_name[index],
     last_name: Faker::Name.last_name,
@@ -23,8 +29,8 @@ index = 0;
   message.save!
   firefly = Firefly.new(
     date_sent: date,
-    date_recieve: (date+365),
-    email_recipient: Faker::Internet.email,
+    date_recieve: (date + 365),
+    email_recipient: [Faker::Internet.email],
     message_id: message.id
   )
   firefly.save!
