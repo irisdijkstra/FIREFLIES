@@ -1,3 +1,5 @@
+ <h2> Form for message</h2>
+
  <%= simple_form_for [@user, @message] do |f| %>
       <%= f.input :letter%>
       <%= f.input :photo, as: :file %>
@@ -5,4 +7,3 @@
       <%= f.input :audio%>
       <%= f.submit "Create a message"%>
 <% end %>
-
