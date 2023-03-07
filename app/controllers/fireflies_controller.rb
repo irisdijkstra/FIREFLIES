@@ -2,6 +2,13 @@ class FirefliesController < ApplicationController
   before_action :find_fly, only: %i[show destroy]
   skip_before_action :authenticate_user!, only: [:show], raise: false
 
+  def index
+    @fireflies = Firefly.where(email)
+  end
+
+  def show
+  end
+
   def new
     # in final version this should be in costum route:
     @firefly = Firefly.new
@@ -20,9 +27,6 @@ class FirefliesController < ApplicationController
     else
       render "fireflies/form", status: :unprocessed_entity
     end
-  end
-
-  def show
   end
 
   def destroy
