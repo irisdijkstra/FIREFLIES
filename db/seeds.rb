@@ -34,7 +34,7 @@ index = 0
     message_id: message.id
   )
   firefly.save!
-  index = index + 1
+  index += 1
 end
 puts ""
 puts 'Done!'

@@ -1,7 +1,9 @@
 
 <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
 <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
-<p><strong>Send to: </strong> <br><%= @firefly.email_recipient %></p>
+<p><strong>Send to: </strong> <br><% @firefly.email_recipient.each do |mail|%>
+<%= mail %>
+<% end %></p>
 
 <p><strong>Letter: </strong> <br><%= @firefly.message.letter %></p>
 <p><strong>Photo: </strong> <br><%= @firefly.message.image %></p>

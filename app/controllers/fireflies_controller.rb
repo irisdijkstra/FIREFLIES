@@ -1,5 +1,7 @@
 class FirefliesController < ApplicationController
   before_action :find_fly, only: %i[show destroy]
+  skip_before_action :authenticate_user, only: [:show]
+
   def new
     # in final version this should be in costum route:
     @firefly = Firefly.new
@@ -9,7 +11,8 @@ class FirefliesController < ApplicationController
     @message = Message.find(params[:message_id])
     @firefly = Firefly.new(firefly_params)
     @firefly.message = @message
-    # @message.user = current_user   # sender
+    @message.user = current_user   # sender
+    @message.save!
 
     raise
 
@@ -32,6 +35,11 @@ class FirefliesController < ApplicationController
   end
 
   def show
+    # if @firefly.message.user = current_user
+    # else
+    # end
+
+
   end
 
   def destroy
