@@ -21,11 +21,16 @@ class FirefliesController < ApplicationController
 
   def create
     @message = Message.find(params[:message_id])
-    @firefly = Firefly.new(firefly_params)
-    @firefly.message = @message
-    @firefly.email_recipient = @message.email_to.first
-    @message.user = current_user # sender
-    @message.save!
+
+    @message.email_to.each do |receiver|
+      @firefly = Firefly.new(firefly_params)
+      @firefly.email_recipient = receiver
+      @firefly.message = @message
+      @firefly.save!
+    end
+    # @firefly.email_recipient = @message.email_to.first
+      @message.user = current_user # sender
+      # @message.save!
 
     if @firefly.save!
       redirect_to root_path
@@ -46,7 +51,6 @@ class FirefliesController < ApplicationController
   end
 
   def firefly_params
-    params.require(:firefly).permit(:date_send, :date_received, :recipient_emails)
+    params.require(:firefly).permit(:date_sent, :date_recieve, :email_recipient)
   end
-
 end
