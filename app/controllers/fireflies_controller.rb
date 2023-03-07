@@ -6,13 +6,16 @@ class FirefliesController < ApplicationController
     @message = Message.find(params[:message_id])
   end
 
+  def index
+    @fireflies = Firefly.where(firefly.message.email_to == current_user.email)
+  end
+
   def create
     @message = Message.find(params[:message_id])
     @firefly = Firefly.new(firefly_params)
     @firefly.message = @message
+    @firefly.email_recipient = @message.email_to.first
     # @message.user = current_user   # sender
-
-    raise
 
     # if @firefly.save!
     #   redirect_to root_path
