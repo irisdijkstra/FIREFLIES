@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.user_id = current_user.id
+    # @message.email_to = params[:message][:email_to].first
     if @message.save
       redirect_to new_message_firefly_path(@message)
     else
@@ -30,6 +31,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:image, :letter, :video, :audio)
+    params.require(:message).permit(:image, :letter, :video, :audio, email_to: [])
   end
 end

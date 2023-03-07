@@ -3,5 +3,7 @@
       <%= f.input :photo, as: :file %>
       <%= f.input :video, as: :file %>
       <%= f.input :audio%>
+      <%= f.label :recipients%>
+      <%= f.input_field :email_to, multiple: true, class: "form-control"%>
       <%= f.submit "Create a message"%>
 <% end %>
