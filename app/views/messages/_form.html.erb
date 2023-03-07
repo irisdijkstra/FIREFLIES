@@ -1,0 +1,7 @@
+ <%= simple_form_for [@user, @message] do |f| %>
+      <%= f.input :letter%>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :video, as: :file %>
+      <%= f.input :audio%>
+      <%= f.submit "Create a message"%>
+<% end %>
