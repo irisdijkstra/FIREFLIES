@@ -6,7 +6,7 @@ Message.destroy_all
 User.destroy_all
 
 puts 'Creating 10 seeds...'
-first_name = ["paola", "ana", "iris", "evgeniya", "danko"]
+first_name = ["Paola", "Ana", "Iris", "Evgeniya", "Danko"]
 index = 0
 
 5.times do
@@ -34,7 +34,7 @@ index = 0
     message_id: message.id
   )
   firefly.save!
-  index = index + 1
+  index += 1
 end
 puts ""
 puts 'Done!'
