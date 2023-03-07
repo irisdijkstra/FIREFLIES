@@ -1,7 +1,7 @@
 <h1>Create firefly</h1>
  <%= simple_form_for [@message, @firefly] do |f| %>
-      <%= f.input :date_sent%>
-      <%= f.input :date_recieve%>
+      <%= f.input :date_sent, as: :date, html5: true%>
+      <%= f.input :date_recieve, as: :date, html5: true%>
       <%= f.input :email_recipient%>
       <%= f.submit "Create a firefly"%>
 <% end %>

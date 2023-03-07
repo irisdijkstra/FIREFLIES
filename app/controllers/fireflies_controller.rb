@@ -47,7 +47,7 @@ class FirefliesController < ApplicationController
   end
 
   def firefly_params
-    params.require(firefly).permit(:date_send, :date_received, :recipient_emails)
+    params.require(:firefly).permit(:date_send, :date_received, :recipient_emails)
   end
 
 end
