@@ -3,8 +3,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.user_id = current_user.id
     if @message.save
-      redirect_to root_path
+      redirect_to new_message_firefly_path(@message)
     else
       render :new, status: :unprocessable_entity
     end
