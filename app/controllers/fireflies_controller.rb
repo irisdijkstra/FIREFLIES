@@ -1,6 +1,6 @@
 class FirefliesController < ApplicationController
   before_action :find_fly, only: %i[show destroy]
-  skip_before_action :authenticate_user, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show], raise: false
 
   def new
     # in final version this should be in costum route:
@@ -12,35 +12,17 @@ class FirefliesController < ApplicationController
     @message = Message.find(params[:message_id])
     @firefly = Firefly.new(firefly_params)
     @firefly.message = @message
-    @message.user = current_user   # sender
+    @message.user = current_user # sender
     @message.save!
 
-    raise
-
-    # if @firefly.save!
-    #   redirect_to root_path
-    # else
-    #   render "messages/form", status: :unprocessed_entity
-    # end
-
-    # @chatroom = Chatroom.find(params[:chatroom_id])
-    # @message = Message.new(message_params)
-    # @message.chatroom = @chatroom
-    # @message.user = current_user
-    # if @message.save
-    #   redirect_to chatroom_path(@chatroom)
-    # else
-    #   render "chatrooms/show", status: :unprocessed_entity
-    # end
-
+    if @firefly.save!
+      redirect_to root_path
+    else
+      render "fireflies/form", status: :unprocessed_entity
+    end
   end
 
   def show
-    # if @firefly.message.user = current_user
-    # else
-    # end
-
-
   end
 
   def destroy
@@ -55,7 +37,10 @@ class FirefliesController < ApplicationController
   end
 
   def firefly_params
-    params.require(firefly).permit(:date_send, :date_received, :recipient_emails)
+    params.require(:firefly).permit(:date_send, :date_received, :recipient_emails)
+  end
+
+  def require_login
   end
 
 end
