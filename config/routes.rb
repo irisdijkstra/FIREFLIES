@@ -7,4 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  # get "content_form", to: "pages#content", as: :content
+  # get "destination_form", to: "pages#destination", as: :destination
+
+  resources :messages, only: %i[create edit new] do
+    resources :fireflies, only: %i[create new]
+  end
+
+  resources :fireflies, only: %i[show destroy]
 end
