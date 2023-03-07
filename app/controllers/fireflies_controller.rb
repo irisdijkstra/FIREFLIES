@@ -5,6 +5,7 @@ class FirefliesController < ApplicationController
   def new
     # in final version this should be in costum route:
     @firefly = Firefly.new
+    @message = Message.find(params[:message_id])
   end
 
   def create
