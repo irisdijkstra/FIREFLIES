@@ -40,7 +40,4 @@ class FirefliesController < ApplicationController
     params.require(:firefly).permit(:date_send, :date_received, :recipient_emails)
   end
 
-  def require_login
-  end
-
 end
