@@ -3,4 +3,13 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  # don't remove it, need it later
+  # def content
+  #   @message = Message.new
+  # end
+
+  # def destination
+  #   @firefly = Firefly.new
+  # end
 end

@@ -1,0 +1,4 @@
+ <%= simple_form_for [@message, @firefly] do |f| %>
+      <%= f.input :date_recieve, as: :date, html5: true%>
+      <%= f.submit "Create a firefly"%>
+<% end %>

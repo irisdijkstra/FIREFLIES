@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_152828) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_101259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "fireflies", force: :cascade do |t|
     t.date "date_sent"
     t.date "date_recieve"
-    t.string "email_recipient"
+    t.string "email_recipient", default: "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "message_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_152828) do
     t.string "video"
     t.string "audio"
     t.bigint "user_id"
+    t.string "email_to", default: [], array: true
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
