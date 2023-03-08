@@ -1,8 +1,4 @@
-<%= javascript_tag "alert('Open firefly of #{@firefly.message.user.first_name} #{@firefly.message.user.last_name}')"  %>
-
 <div class="firefly_show">
-  <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
-  <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
 
   <% if @firefly.message.user == current_user %>
     <p>This firefly is send to <strong> myself </strong></p>
@@ -13,10 +9,23 @@
     <%= @firefly.message.user.email %> </p>
   <% end %>
 
-  <p><strong>Letter: </strong> <br><%= @firefly.message.letter %></p>
-  <p><strong>Photo: </strong> <br><%= @firefly.message.image %></p>
-  <p><strong>Video: </strong> <br><%= @firefly.message.video %></p>
-  <p><strong>Audio: </strong> <br><%= @firefly.message.audio %></p>
+  <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
+  <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
+
+  <% if @firefly.message.letter != "" %>
+    <p><strong></strong> <br><%= @firefly.message.letter  %></p>
+  <% end %>
+  <% if @firefly.message.image != nil %>
+    <p><strong></strong> <br><%= @firefly.message.image%></p>
+  <% end %>
+  <% if @firefly.message.video != nil %>
+    <p><strong></strong> <br><%= @firefly.message.video %></p>
+  <% end %>
+  <% if @firefly.message.audio != "" %>
+    <p><strong></strong> <br><%= @firefly.message.audio %></p>
+  <% end %>
 
   <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
+  <%= link_to "My timeline", root_path %>
+
