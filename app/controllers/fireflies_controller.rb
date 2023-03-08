@@ -3,7 +3,7 @@ class FirefliesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show], raise: false
 
   def index
-    @fireflies = Firefly.where(email_recipient: "iris")
+    @fireflies = Firefly.where(email_recipient: current_user.email.class)
   end
 
   def show
