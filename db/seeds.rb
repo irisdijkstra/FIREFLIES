@@ -24,13 +24,14 @@ index = 0
     # image: nil,
     # video: nil,
     # audio: nil
-    user_id: user.id
+    user_id: user.id,
+    email_to: ["#{first_name[index - 1]}@firefly.com"]
     )
   message.save!
   firefly = Firefly.new(
     date_sent: date,
     date_recieve: (date + 365),
-    email_recipient: [Faker::Internet.email],
+    email_recipient: "#{first_name[index - 1]}@firefly.com",
     message_id: message.id
   )
   firefly.save!
