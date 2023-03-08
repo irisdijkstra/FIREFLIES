@@ -1,12 +1,101 @@
-.navbar-lewagon {
+
+.nav-firefly {
+  display: flex;
   justify-content: space-between;
+  background-color: transparent;
+  align-items: center;
+  color: white;
+}
+
+.nav-firefly p {
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-firefly h1 {
+  margin: 0;
+  font-family: Lancelot;
+}
+
+.header-container {
+  width: 867px;
+  margin: 0 auto;
+  position: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .fa-solid {
+    margin-right: 0.5rem;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #05031d20;
+  padding-bottom: 8px;
+}
+
+.nav-firefly a {
+  color: rgb(255, 255, 255);
+  width: max-content;
+  text-decoration: none;
+  font-family: Open Sans;
+  padding: 12px 32px 0 4px;
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-content a:after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(255, 255, 255);
+  transition: 400ms;
+}
+
+
+.nav-firefly p:after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: white;
+  transition: 400ms;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+
+.nav-firefly p:not(:hover):after {
+  right: 0;
+  left: auto;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.dropdown-content a:hover:after {
+  width: 80%;
+}
+
+.dropdown-content a:not(:hover):after {
+  right: 0;
+  left: auto;
+}
+
+.nav-firefly p:hover:after {
+  width: 100%;
+}
+
+.login-style {
+  padding: 0 !important;
 }
