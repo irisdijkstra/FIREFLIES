@@ -2,10 +2,6 @@ class FirefliesController < ApplicationController
   before_action :find_fly, only: %i[show destroy update]
   skip_before_action :authenticate_user!, only: [:show], raise: false
 
-  def index
-    @fireflies = Firefly.where(email_recipient: current_user.email.class)
-  end
-
   def show
   end
 

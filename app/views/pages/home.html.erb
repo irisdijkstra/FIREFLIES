@@ -2,7 +2,7 @@
   <% @fireflies.each do |firefly| %>
      <div class="item" style="width: max-content;" >
     <div class="hover-links">
-      <%= if firefly.date_recieve >= Date.today
+      <%= if firefly.date_recieve <= Date.today
             link_to "FIREFLY", firefly_path(firefly)
           else
            link_to "#{firefly.date_recieve}"
@@ -15,7 +15,5 @@
   </div>
   <% end %>
 </div>
-
-<%= current_user.email%>
 
 <%= link_to "Create a firefly", new_message_path%>
