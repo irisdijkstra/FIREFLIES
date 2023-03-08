@@ -1,5 +1,5 @@
 <h1>My timeline</h1>
-
+<div class="item">
   <% @fireflies.each do |firefly| %>
     <p><%= if firefly.date_recieve >= Date.today
            link_to "#{firefly.date_recieve}", firefly_path(firefly)
@@ -7,6 +7,10 @@
            link_to "#{firefly.date_recieve}"
            end
            %></p>
+             <div class="innerText">
+        <p>Ice cream fruitcake cotton candy.</p>
+       </div>
   <% end %>
+</div>
 
 <%= link_to "Create a firefly", new_message_path%>

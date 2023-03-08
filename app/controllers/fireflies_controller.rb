@@ -21,6 +21,7 @@ class FirefliesController < ApplicationController
     @message.email_to.each do |receiver|
       @firefly = Firefly.new(firefly_params)
       @firefly.email_recipient = receiver
+      @firefly.date_sent = Date.today
       @firefly.message = @message
       @firefly.save!
     end
