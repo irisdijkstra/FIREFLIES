@@ -1,5 +1,5 @@
 class FirefliesController < ApplicationController
-  before_action :find_fly, only: %i[show destroy]
+  before_action :find_fly, only: %i[show destroy update]
   skip_before_action :authenticate_user!, only: [:show], raise: false
 
   def show
@@ -9,14 +9,14 @@ class FirefliesController < ApplicationController
     @message = Message.find(params[:message_id])
   end
 
-  # def new
-  #   # in final version this should be in costum route:
-  #   @message = Message.find(params[:message_id])
-  # end
+  def update
+    ## LEAVE LOOP HERE! We might need it later :) ##
+    # @message.fireflies.each do |firefly|
+      @firefly.update(firefly_params)
+    # end
 
-  # def create
-  #   @message = Message.find(params[:message_id])
-  # end
+    redirect_to root_path
+  end
 
   def destroy
     @firefly.destroy!
