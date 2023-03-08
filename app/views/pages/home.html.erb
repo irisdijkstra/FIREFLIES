@@ -1,9 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-  <% @fireflies.each do |firefly| %>
-          <p><%= link_to "#{firefly.date_recieve}", firefly_path(firefly)%></p>
-        <% end %>
+<h1>My timeline</h1>
 
-        <%= current_user.email%>
+  <% @fireflies.each do |firefly| %>
+    <p><%= if firefly.date_recieve >= Date.today
+           link_to "#{firefly.date_recieve}", firefly_path(firefly)
+           else
+           link_to "#{firefly.date_recieve}"
+           end
+           %></p>
+  <% end %>
 
 <%= link_to "Create a firefly", new_message_path%>
