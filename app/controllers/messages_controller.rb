@@ -1,19 +1,25 @@
 class MessagesController < ApplicationController
   before_action :find_message, only: %i[update edit]
 
+  def new
+    @message = Message.new
+  end
+
   def create
     @message = Message.new(message_params)
     @message.user_id = current_user.id
-    # @message.email_to = params[:message][:email_to].first
-    if @message.save
-      redirect_to new_message_firefly_path(@message)
+    @message.email_to = params[:emails]
+
+    if @message.save!
+      @message.email_to.each do |receiver|
+        @firefly = Firefly.new(email_recipient: receiver, date_sent: Date.today)
+        @firefly.message = @message
+        @firefly.save!
+      end
+      redirect_to message_date_path(@message)
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def new
-    @message = Message.new
   end
 
   def edit
