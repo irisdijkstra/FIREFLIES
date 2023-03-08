@@ -2,3 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import { addMail }  from './messages.js'
+
+document.addEventListener('turbo:load', () => {
+  addMail()
+});

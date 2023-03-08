@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "destination_form", to: "pages#destination", as: :destination
 
   resources :messages, only: %i[create edit new] do
-    resources :fireflies, only: %i[create new]
+    get "/date", to: "fireflies#date", as: :date
   end
 
   resources :fireflies, only: %i[show destroy]
