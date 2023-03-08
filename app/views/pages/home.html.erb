@@ -1,5 +1,7 @@
 <h1>My timeline</h1>
-<div class="item">
+     <div id="item"
+        onmouseover="document.getElementById('div1').style.display = 'block';"
+        onmouseout="document.getElementById('div1').style.display = 'none';">
   <% @fireflies.each do |firefly| %>
     <p><%= if firefly.date_recieve >= Date.today
            link_to "#{firefly.date_recieve}", firefly_path(firefly)
@@ -7,10 +9,9 @@
            link_to "#{firefly.date_recieve}"
            end
            %></p>
-             <div class="innerText">
-        <p>Ice cream fruitcake cotton candy.</p>
-       </div>
-  <% end %>
+   <div id="div1" style="display: none;"><%= firefly.date_recieve %></div>
 </div>
+  <% end %>
+
 
 <%= link_to "Create a firefly", new_message_path%>
