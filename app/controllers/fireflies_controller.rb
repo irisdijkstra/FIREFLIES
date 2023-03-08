@@ -3,7 +3,7 @@ class FirefliesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show], raise: false
 
   def index
-    @fireflies = Firefly.where(email_to == current_user.email)
+    @fireflies = Firefly.where(email_recipient: "iris")
   end
 
   def show
@@ -13,10 +13,6 @@ class FirefliesController < ApplicationController
     # in final version this should be in costum route:
     @firefly = Firefly.new
     @message = Message.find(params[:message_id])
-  end
-
-  def index
-    @fireflies = Firefly.where(firefly.message.email_to == current_user.email)
   end
 
   def create
