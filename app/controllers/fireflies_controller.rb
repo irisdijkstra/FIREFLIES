@@ -23,7 +23,7 @@ class FirefliesController < ApplicationController
     @message = Message.find(params[:message_id])
 
     @message.email_to.each do |receiver|
-      @firefly = Firefly.new(email_recipient: receiver)
+      @firefly = Firefly.new(email_recipient: receiver, date_sent: Date.today)
       @firefly.message = @message
       @firefly.update(firefly_params)
 

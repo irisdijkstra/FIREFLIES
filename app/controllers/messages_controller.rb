@@ -2,9 +2,11 @@ class MessagesController < ApplicationController
   before_action :find_message, only: %i[update edit]
 
   def create
+    # raise
     @message = Message.new(message_params)
     @message.user_id = current_user.id
-    # @message.email_to = params[:message][:email_to].first
+    @message.email_to = params[:emails]
+
     if @message.save
       redirect_to new_message_firefly_path(@message)
     else

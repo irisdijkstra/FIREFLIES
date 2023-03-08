@@ -3,7 +3,14 @@
       <%= f.input :photo, as: :file %>
       <%= f.input :video, as: :file %>
       <%= f.input :audio%>
-      <%= f.label :recipients%>
-      <%= f.input_field :email_to, multiple: true, class: "form-control"%>
+
+      <%= f.label :recipients %>
+
+      <div class="add-mails-btn"> add email</div>
+      <div class="add-mails">
+        <input type="text" name="emails[]" class="add-mails-input form-control">
+      </div>
+
+      <br>
       <%= f.submit "Create a message"%>
 <% end %>
