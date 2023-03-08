@@ -30,7 +30,7 @@ index = 0
   firefly = Firefly.new(
     date_sent: date,
     date_recieve: (date + 365),
-    email_recipient: [Faker::Internet.email],
+    email_recipient: Faker::Internet.email,
     message_id: message.id
   )
   firefly.save!
