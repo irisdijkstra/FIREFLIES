@@ -11,11 +11,18 @@
     <%= @firefly.message.user.email %> </p>
   <% end %>
 
-  <p><strong>Letter: </strong> <br><%= @firefly.message.letter %></p>
-  <p><strong>Photo: </strong> <br><%= @firefly.message.image %></p>
-  <p><strong>Video: </strong> <br><%= @firefly.message.video %></p>
-  <p><strong>Audio: </strong> <br><%= @firefly.message.audio %></p>
-
+  <% if @firefly.message.letter != "" %>
+    <p><strong>Letter: </strong> <br><%= @firefly.message.letter  %></p>
+  <% end %>
+  <% if @firefly.message.image != nil %>
+    <p><strong>Photo: </strong> <br><%= @firefly.message.image%></p>
+  <% end %>
+  <% if @firefly.message.video != nil %>
+    <p><strong>Video: </strong> <br><%= @firefly.message.video %></p>
+  <% end %>
+  <% if @firefly.message.audio != "" %>
+    <p><strong>Audio: </strong> <br><%= @firefly.message.audio %></p>
+  <% end %>
   <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
   <%= link_to "My timeline", root_path %>
