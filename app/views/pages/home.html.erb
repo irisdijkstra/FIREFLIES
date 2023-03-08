@@ -1,16 +1,17 @@
 <h1>My timeline</h1>
   <% @fireflies.each do |firefly| %>
-     <div class="item" style: style="width: max-content;"
-        onmouseover="document.querySelector('.div1').style.display = 'block';"
-        onmouseout="document.querySelector('.div1').style.display = 'none';">
-
-    <p><%= if firefly.date_recieve >= Date.today
-           link_to "FIREFLY", firefly_path(firefly)
-           else
+     <div class="item" style="width: max-content;" >
+    <div class="hover-links">
+      <%= if firefly.date_recieve >= Date.today
+            link_to "FIREFLY", firefly_path(firefly)
+          else
            link_to "#{firefly.date_recieve}"
-           end
-           %></p>
-   <div class="div1" style="display: none;"><%= firefly.date_recieve.strftime('%d %b %Y') %></div>
+          end
+           %>
+       <div style="display: none;">
+        <%= firefly.date_recieve.strftime('%d %b %Y') %>
+       </div>
+    </div>
   </div>
   <% end %>
 </div>
