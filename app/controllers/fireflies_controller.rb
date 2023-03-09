@@ -10,6 +10,7 @@ class FirefliesController < ApplicationController
   end
 
   def update
+    raise
     ## LEAVE LOOP HERE! We might need it later :) ##
     # @message.fireflies.each do |firefly|
       @firefly.update(firefly_params)
