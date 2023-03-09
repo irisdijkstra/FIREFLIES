@@ -1,20 +1,29 @@
 <% if current_user %>
 <h1>My timeline</h1>
+<div class="all">
+<div class="all-fireflies-inline">
+
   <% @fireflies.each do |firefly| %>
-     <div class="item" style="width: max-content;" >
+    <div class="item" style="width: max-content;" >
       <div class="hover-links">
-      <%= if firefly.date_recieve <= Date.today
-            link_to "FIREFLY", firefly_path(firefly)
-          else
-           link_to "FIREFLY"
-          end
-           %>
-       <div style="display: none;">
+             <div class="date-firefly" style="display: none;">
         <%= firefly.date_recieve.strftime('%d %b %Y') %>
-       </div>
       </div>
-     </div>
+        <%= if firefly.date_recieve <= Date.today
+              link_to "FIREFLY", firefly_path(firefly)
+            else
+              link_to "FIREFLY"
+            end
+        %>
+        <div class="little-thing">
+        </div>
+
+    </div>
+  </div>
   <% end %>
+  </div>
+    <div id="timeline">
+    </div>
 </div>
 <%= link_to "Create a firefly", new_message_path%>
 <% else %>
