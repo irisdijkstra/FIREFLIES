@@ -14,14 +14,22 @@ a {
   width: 500px;
   justify-content: space-around;
   align-items: center;
-  margin: 200px auto;
+  margin: 0 auto;
   align-content: space-around;
 }
 
 #timeline {
-  width: 1000px;
-  height: 20px;
+  width: 800px;
+  height: 10px;
+  align-self: center;
 
   background: rgb(55,151,201);
   background: linear-gradient(90deg, rgba(55,151,201,1) 0%, rgba(248,224,8,0.8) 80%);
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 500px;
 }

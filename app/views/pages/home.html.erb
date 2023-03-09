@@ -1,8 +1,7 @@
 <h1>My timeline</h1>
-
+<div class="all">
 <div class="all-fireflies-inline">
-  <div id="timeline">
-  </div>
+
   <% @fireflies.each do |firefly| %>
     <div class="item" style="width: max-content;" >
       <div class="hover-links">
@@ -18,8 +17,10 @@
     </div>
   </div>
   <% end %>
+  </div>
+    <div id="timeline">
+    </div>
 </div>
-
 
 
 
