@@ -1,0 +1,33 @@
+.footer-container {
+  width: 867px;
+  margin: 0 auto;
+  position: center;
+}
+
+.footer {
+  background:  #05031d20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(245, 245, 245);
+  font-family: Open Sans;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+
+.footer-links a {
+  color: rgb(245, 245, 245) !important;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.instagram :hover {
+  color: rgb(184, 0, 184);
+}
+
+.facebook :hover {
+  color: #3B5793;
+}

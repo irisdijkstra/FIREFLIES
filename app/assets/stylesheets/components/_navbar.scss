@@ -5,6 +5,8 @@
   background-color: transparent;
   align-items: center;
   color: white;
+  position: absolute;
+  width: 867px;
 }
 
 .nav-firefly p {
@@ -97,5 +99,10 @@
 }
 
 .login-style {
+  padding: 0 !important;
+}
+
+.login-style-none {
+  color:#05031d20 !important;
   padding: 0 !important;
 }
