@@ -1,11 +1,11 @@
 <h1>Update firefly date</h1>
   <br>
 
-  <div id="form_all">
+  <div id="form-all">
     <%# first div below obtained from inspect (form) %>
-    <%# !!! PLEASE LEAVE ID "date-all" IN FIRST DIV !!! (JS) %>
-    <div id="date-all" class="d-flex flex-row justify-content-between align-items-center">
-      <input class="form-select mx-1 date optional" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
+    <%# !!! LEAVE ID "firefly-date-recieve-all" IN FIRST INPUT (JS) !!!  %>
+    <div class="d-flex flex-row justify-content-between align-items-center">
+      <input class="form-select mx-1 date optional" type="date" name="firefly[date_recieve]" id="firefly-date-recieve-all">
     </div>
 
     <div class="d-flex">
@@ -17,15 +17,17 @@
   <br>
   <br>
 
-  <div id="form_each">
-  <% @message.fireflies.each do |firefly| %>
-    <p>change date for <strong><%= firefly.email_recipient %></strong></p>
-    <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
-        <%= f.input :email_recipient %>
-        <%= f.input :date_recieve, as: :date, html5: true%>
-        <%= f.submit "Send firefly"%>
+  <div id="form-each" class="d-none">
+    <% @message.fireflies.each do |firefly| %>
+      <p>change date for <strong><%= firefly.email_recipient %></strong></p>
+        <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
+            <%= f.input :email_recipient %>
+            <%# Original input for date below, not manipulatable: %>
+            <%# f.input :date_recieve, as: :date, html5: true %>
+            <input class="form-select mx-1 date optional test" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
+            <%= f.submit "Send firefly"%>
+        <% end %>
     <% end %>
     <br>
     <br>
-  <% end %>
   </div>
