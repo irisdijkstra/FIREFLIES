@@ -18,6 +18,10 @@ a {
   text-decoration:none;
 }
 
+.little-thing {
+
+}
+
 .all-fireflies-inline {
   padding-top: 50px;
   display: flex;
@@ -48,4 +52,13 @@ a {
   justify-content: center;
   padding-bottom: 500px;
   padding-top: 50px;
+}
+
+.hover-links {
+  margin-top: -1.55em;
+}
+
+.date-firefly {
+  position: absolute;
+  top: 150px;
 }
