@@ -12,6 +12,7 @@ body {
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
   text-decoration:none;
   color:  rgb(201, 87, 163);
+  font-weight: 100;
 }
 
 a {
@@ -19,7 +20,29 @@ a {
 }
 
 .little-thing {
+  background-color: #f8ee8e;
+  box-shadow: 0 0 0 0 rgb(226, 255, 82);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: pulse-red 2s infinite;
+}
 
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(252, 255, 82, 0.943);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
 }
 
 .all-fireflies-inline {
