@@ -5,27 +5,26 @@
 }
 
 .banner h1 {
-  margin: 0 auto;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 64px;
   font-weight: bold;
-  text-align: center;
   font-family: Open Sans;
-  width: 500px;
+  margin-bottom: 56px;
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
 
-.banner a {
+.cta-white a {
   color: #09578C;
   text-decoration: none;
   font-size: 18px;
-  line-height: 25px;
-  font-weight: bold;
+  // line-height: 25px;
+  // font-weight: bold;
+  margin: 0 auto;
+}
+
+.container-banner {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
