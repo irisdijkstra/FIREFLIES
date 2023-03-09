@@ -9,25 +9,28 @@
     </div>
 
     <div class="d-flex">
+     <%# With apply all you will apply to all messages %>
       <div id="apply-all-btn"> APPLY DATE TO ALL | </div>
-      <div id="costumize-btn"> COSTUMIZE DATES</div>
+      <div id="costumize-btn"> COSTUMIZE DATES | </div>
+      <div id="send-btn"> SEND </div>
     </div>
   </div>
 
   <br>
   <br>
-
-  <div id="form-each" class="d-none">
-    <% @message.fireflies.each do |firefly| %>
-      <p>change date for <strong><%= firefly.email_recipient %></strong></p>
-        <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
+  <% @message.fireflies.each do |firefly| %>
+      <div id="form-each" class="d-none">
+          <p>change date for <strong><%= firefly.email_recipient %></strong></p>
+          <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
             <%= f.input :email_recipient %>
             <%# Original input for date below, not manipulatable: %>
             <%# f.input :date_recieve, as: :date, html5: true %>
-            <input class="form-select mx-1 date optional test" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
-            <%= f.submit "Send firefly"%>
+            <input class="form-select mx-1 date optional date-form" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
+            <%= f.submit "Send firefly" %>
         <% end %>
-    <% end %>
+        <%# <%= render 'form', firefly: firefly %>
+      </div>
+  <% end %>
     <br>
     <br>
   </div>

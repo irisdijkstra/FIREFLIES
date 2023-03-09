@@ -10,13 +10,13 @@ class FirefliesController < ApplicationController
   end
 
   def update
-    raise
-    ## LEAVE LOOP HERE! We might need it later :) ##
-    # @message.fireflies.each do |firefly|
-      @firefly.update(firefly_params)
-    # end
+    @firefly = Firefly.find(params[:id])
+    @firefly.update(firefly_params)
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path } # if HTML requested, redirect to index
+      format.text { render partial: "fireflies/form", locals: { firefly: @firefly }, formats: [:html] }
+    end
   end
 
   def destroy
