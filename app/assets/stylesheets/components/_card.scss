@@ -11,22 +11,26 @@ img {
 .container-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-between;
+  width: 960px;
+  margin: 64px auto;
+  // height: 100vh;
   // background: #444;
 }
 
 .card {
   position: relative;
-  background: #ffffff;
-  width: 400px;
-  height: 75vh;
+  background: #D3D3D3;
+  width: 260px;
+  height: 55vh;
   border-radius: 6px;
-  padding: 2rem;
+  padding: 1rem;
   color: #05031d;
   box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
     0 0 1rem rgba(0,0,0,0.2);
   overflow: hidden;
+  justify-content: space-between;
+
 
   &__image-container {
     margin: -2rem -2rem 1rem -2rem;
@@ -38,8 +42,7 @@ img {
   }
 
   &__image {
-    opacity: 0;
-    animation: ImageFadeIn .8s 1.4s forwards;
+    filter: brightness(60%);
   }
 
   &__title {

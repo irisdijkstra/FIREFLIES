@@ -5,8 +5,9 @@
   background-color: transparent;
   align-items: center;
   color: white;
-  position: absolute;
-  width: 867px;
+  position: fixed;
+  top: 0;
+  width: 1040px;
 }
 
 .nav-firefly p {
@@ -21,7 +22,7 @@
 }
 
 .header-container {
-  width: 867px;
+  width: 1040px;
   margin: 0 auto;
   position: center;
 }
