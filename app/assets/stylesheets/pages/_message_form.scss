@@ -1,0 +1,40 @@
+$formBlue: #004B7D;
+$borderColor: rgba(255, 255, 255, 0.8);
+$formFillColor: rgba(255, 255, 255, 0.5);
+
+*{
+  max-width: 960px;
+  padding: 10px;
+  margin: auto;
+}
+
+.add-mails {
+  width: 746px;
+  height: 64px;
+  border: 15px;
+  box-sizing: border-box;
+  position: static;
+  left: 0%;
+  right: 0.13%;
+  top: 0%;
+  bottom: 88.75%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(200, 200, 200, 0.8);
+  border-radius: 15px;
+
+  .add-mails-input {
+    width: 726px;
+    height: 44px;
+    top: 10px;
+    left: 11px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    //position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(200, 200, 200, 0.8);
+  }
+}
+
+//.photo-field {
+//  visibility: hidden;
+//}
