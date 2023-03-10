@@ -1,65 +1,36 @@
-<% if current_user %>
-<h1>My timeline</h1>
-<div class="all">
-<div class="all-fireflies-inline">
 
-  <% @fireflies.each do |firefly| %>
-    <div class="item" style="width: max-content;" >
-      <div class="hover-links">
-             <div class="date-firefly" style="display: none;">
-        <%= firefly.date_recieve.strftime('%d %b %Y') %>
-      </div>
-        <%= if firefly.date_recieve <= Date.today
-              link_to "FIREFLY", firefly_path(firefly)
-            else
-              link_to "FIREFLY"
-            end
-        %>
-        <div class="little-thing">
-        </div>
-
-    </div>
-  </div>
-  <% end %>
-  </div>
-    <div id="timeline">
-    </div>
-</div>
-<%= link_to "Create a firefly", new_message_path%>
-<% else %>
 <div class="container-shared">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.boredpanda.com/blog/wp-content/uploads/2016/07/fireflies-long-exposure-photography-2016-japan-10.jpg);">
-  <div class="container-banner">
-    <h1>A way to connect through time !</h1>
-    <%= link_to new_user_registration_path, class: "cta-white" do %>
-      <strong>SIGN UP</strong>
-    <% end %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.boredpanda.com/blog/wp-content/uploads/2016/07/fireflies-long-exposure-photography-2016-japan-10.jpg);">
+    <div class="container-banner">
+      <h1>A way to connect through time !</h1>
+      <%= link_to new_user_registration_path, class: "cta-white" do %>
+        <strong>SIGN UP</strong>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/card" %>
+  <div class="container-home">
+      <div id="timeline">
+      </div>
+  </div>
+  <div class="container-customer">
+      <h2>What our customers say:</h2>
+      <h5><i>It is so nice to receive an unexpected firefly - Joyce</i></h5>
+      <h5><i>Such a wonderful app - Andrea</i></h5>
+      <h5><i>I use it as my journal every day - Mark</i></h5>
+  </div>
+  <div class="container-home">
+      <div id="timeline">
+      </div>
+  </div>
+  <div class="last-section">
+      <img src="https://i.pinimg.com/474x/02/23/77/022377a926ea7be2c86882f865602558.jpg" alt="Fireflies" style="border-radius: 6px; border: 0.5px solid #fcf29c">
+      <div class="last-section-infos">
+          <h5>Fireflies helps you</h5>
+          <h2>Send messages to loved ones in the future.</h2>
+          <p>Weather you want to create a digital journal for yourself or send a time capsule to a loved one.</p>
+          <a href="#" class="cta-yellow"><strong>LEARN MORE</strong></a>
+      </div>
   </div>
 </div>
-<%= render "shared/card" %>
-<div class="container-home">
-    <div id="timeline">
-    </div>
-</div>
-<div class="container-customer">
-    <h2>What our customers say:</h2>
-    <h5><i>It is so nice to receive an unexpected firefly - Joyce</i></h5>
-    <h5><i>Such a wonderful app - Andrea</i></h5>
-    <h5><i>I use it as my journal every day - Mark</i></h5>
-</div>
-<div class="container-home">
-    <div id="timeline">
-    </div>
-</div>
-<div class="last-section">
-    <img src="https://i.pinimg.com/474x/02/23/77/022377a926ea7be2c86882f865602558.jpg" alt="Fireflies" style="border-radius: 6px; border: 0.5px solid #fcf29c">
-    <div class="last-section-infos">
-        <h5>Fireflies helps you</h5>
-        <h2>Send messages to loved ones in the future.</h2>
-        <p>Weather you want to create a digital journal for yourself or send a time capsule to a loved one.</p>
-        <a href="#" class="cta-yellow"><strong>LEARN MORE</strong></a>
-    </div>
-</div>
-</div>
 
-<% end %>
