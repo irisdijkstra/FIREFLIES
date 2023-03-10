@@ -11,7 +11,7 @@ $primary-color: #888;
 
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
   text-decoration:none;
-  color:  rgb(201, 87, 163);
+  color: white;
   font-weight: 100;
 }
 
@@ -26,6 +26,13 @@ a {
   height: 40px;
   border-radius: 50%;
   animation: pulse-red 2.5s infinite;
+}
+
+.create-firefly-button {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 100px;
+
 }
 
 @keyframes pulse-red {
@@ -48,7 +55,7 @@ a {
 .all-fireflies-inline {
   padding-top: 50px;
   display: flex;
-  width: 500px;
+  width: 400px;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
@@ -71,8 +78,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 500px;
-  padding-top: 50px;
+  padding-bottom: 210px;
+  padding-top: 250px;
 }
 
 .hover-links {
@@ -81,7 +88,7 @@ a {
 
 .date-firefly {
   position: absolute;
-  top: 150px;
+  top: 260px;
 }
 
 @keyframes border-flicker {

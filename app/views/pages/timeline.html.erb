@@ -1,5 +1,4 @@
 <%# <div style="height: 500px;"> %>
-<h1>My timeline</h1>
 <div class="all">
 <div class="all-fireflies-inline">
 
@@ -24,6 +23,5 @@
     <div id="timeline">
   </div>
 </div>
-<%= link_to "Create a firefly", new_message_path%>
-
-<%# </div> %>
+<div class="create-firefly-button">
+<%= link_to "Create a firefly", new_message_path, class: "cta-white"%>
