@@ -1,7 +1,5 @@
 const fireHower = () => {
   const links = document.querySelectorAll(".hover-links")
-  console.log("adad")
-
 
   links.forEach((link) => {
     link.addEventListener("mouseover", () => {
