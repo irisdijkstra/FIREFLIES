@@ -8,8 +8,7 @@ User.destroy_all
 
 puts 'Creating 10 seeds...'
 first_name = ["paola", "ana", "iris", "evgeniya", "danko"]
-index = 0
-file = "https://www.billboard.com/wp-content/uploads/2022/03/23.-Miles-Davis-%E2%80%98Bitches-Brew-1969-album-art-billboard-1240.jpg?w=1024"
+file = "https://wl-brightside.cf.tsp.li/resize/728x/jpg/55e/4fe/090f595ddfa20a96d1c00f6936.jpg"
 
 5.times do
   date = Faker::Date.between(from: '2023-03-04', to: '2023-03-08')
