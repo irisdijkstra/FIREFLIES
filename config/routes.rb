@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get "/date", to: "fireflies#date", as: :date
   end
 
+  get "/timeline", to: "pages#timeline", as: :timeline
+
   resources :fireflies, only: %i[show destroy update]
 end
