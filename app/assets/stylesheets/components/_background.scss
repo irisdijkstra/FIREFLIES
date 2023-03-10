@@ -23,7 +23,7 @@
 
 .circle-container {
   $particleNum: 200;
-  $particleColor: hsl(180, 100%, 80%);
+  $particleColor: hsl(60, 82%, 33%);
 
   position: fixed;
   transform: translateY(-10vh);
@@ -36,9 +36,9 @@
     border-radius: 50%;
     mix-blend-mode: screen;
     background-image: radial-gradient(
-      hsl(45, 100%, 80%),
-      hsl(45, 100%, 80%) 10%,
-      hsla(45, 100%, 80%, 0) 56%
+      hsl(60, 82%, 33%),
+      hsl(60, 82%, 33%) 10%,
+      hsla(60, 82%, 33%, 0) 56%
     );
 
     animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
