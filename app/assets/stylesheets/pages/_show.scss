@@ -1,14 +1,25 @@
 .page-container {
   width: 960px;
   margin: 64px auto;
+
+  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
+  // align middle
+  margin-top: 210px;
+
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.show-container {
+.show-container-outside {
   width: 746px;
   height: 351px;
   border: 15px;
-  box-sizing: border-box;
   text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   left: 0%;
   right: 0.13%;
   top: 0%;
@@ -18,7 +29,7 @@
   border-radius: 15px;
 }
 
-.show-container-input {
+.show-container-inside {
   width: 726px;
   height: 331px;
   top: 10px;
@@ -27,4 +38,17 @@
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.show-container-info {
+
+}
+
+.show-btn-container {
+  display: flex;
+  justify-content: center;
+
+  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
+  // footer fix
+  margin-bottom: 130px;
 }
