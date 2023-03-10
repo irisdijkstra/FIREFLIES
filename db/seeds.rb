@@ -1,4 +1,5 @@
 require 'faker'
+require "open-uri"
 
 # Destroy all seeds first before craeting new ones
 Firefly.destroy_all

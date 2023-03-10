@@ -1,30 +1,33 @@
-<div class="firefly_show">
+<div class="page-container">
+    <div class="show-container">
+      <div class="show-container-input">
+      <% if @firefly.message.user == current_user %>
+        <p>This firefly is send to <strong> myself </strong></p>
+      <% else %>
+        <p><strong>Received from: </strong> <br>
+        <%= @firefly.message.user.first_name %>
+        <%= @firefly.message.user.last_name %> --
+        <%= @firefly.message.user.email %> </p>
+      <% end %>
 
-  <% if @firefly.message.user == current_user %>
-    <p>This firefly is send to <strong> myself </strong></p>
-  <% else %>
-    <p><strong>Received from: </strong> <br>
-    <%= @firefly.message.user.first_name %>
-    <%= @firefly.message.user.last_name %> --
-    <%= @firefly.message.user.email %> </p>
-  <% end %>
+      <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
+      <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
 
-  <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
-  <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
+      <% if @firefly.message.letter != "" %>
+        <p><strong></strong> <br><%= @firefly.message.letter  %></p>
+      <% end %>
+      <% if @firefly.message.image != nil %>
+        <p><strong></strong> <br><%= @firefly.message.image%></p>
+      <% end %>
+      <% if @firefly.message.video != nil %>
+        <p><strong></strong> <br><%= @firefly.message.video %></p>
+      <% end %>
+      <% if @firefly.message.audio != "" %>
+        <p><strong></strong> <br><%= @firefly.message.audio %></p>
+      <% end %>
+    </div>
+  </div>
 
-  <% if @firefly.message.letter != "" %>
-    <p><strong></strong> <br><%= @firefly.message.letter  %></p>
-  <% end %>
-  <% if @firefly.message.image != nil %>
-    <%= cl_image_tag @firefly.message.image.key, height:300, width:300, crop: :fill%>
-  <% end %>
-  <% if @firefly.message.video != nil %>
-    <p><strong></strong> <br><%= @firefly.message.video %></p>
-  <% end %>
-  <% if @firefly.message.audio != "" %>
-    <p><strong></strong> <br><%= @firefly.message.audio %></p>
-  <% end %>
-
-  <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "My timeline", root_path %>
 </div>
-  <%= link_to "My timeline", root_path %>
