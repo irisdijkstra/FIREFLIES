@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
-  def home
-    @fireflies = Firefly.where(email_recipient: current_user.email).order("date_recieve ASC")
-  end
+  # def home
+  #   @fireflies = Firefly.where(email_recipient: current_user.email).order("date_recieve ASC")
+  # end
 
   # don't remove it, need it later
   # def content
