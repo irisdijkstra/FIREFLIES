@@ -5,7 +5,7 @@
   <% @fireflies.each do |firefly| %>
     <div class="item" style="width: max-content;" >
       <div class="hover-links">
-             <div class="date-firefly" style="display: none;">
+             <div class="date-firefly position-absolute" style="display: none;">
         <%= firefly.date_recieve.strftime('%d %b %Y') %>
       </div>
         <%= if firefly.date_recieve <= Date.today
@@ -14,8 +14,7 @@
               link_to "FIREFLY"
             end
         %>
-        <div class="little-thing">
-        </div>
+        <div class="little-thing"></div>
 
     </div>
   </div>
