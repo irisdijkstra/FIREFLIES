@@ -34,22 +34,21 @@ const dateToAll = (event) => {
   if(sendBtn) {
     sendBtn.addEventListener("click", () => {
     // if clicked, all dates will be saved for fireflies
-      formActions.forEach((field) => {
-        // const csrfToken = document.querySelector("[name='csrf-token']").content;
-        // let costumMail = field.querySelector("#firefly_email_recipient")
-        // let costumDate = field.querySelector(".date-form").value
-
-      // (field.action) => this is the URL to where the firefly will be patched
-        fetch(field.action, {
-          method: "PATCH",
-          headers: {"Accept": "text/plain"},
-          body: new FormData(field)
-        })
-        .then((response) => response.text())
-        .then((data) => console.log(data))
+      formActions.forEach((form) => {
+      // (form.action) => this is the URL to where the firefly will be patched
+          fetch(form.action, {
+            method: "PATCH",
+            headers: {"Accept": "text/plain"},
+            body: new FormData(form)
+          })
+          // .then((response) => response.text())
+          // .then((data) => {
+          // })
+            // (no promis needed here)
         });
-
+        window.location.href = "http://localhost:3000/timeline"
       });
+
     };
 };
 
