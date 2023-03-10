@@ -35,21 +35,19 @@ const dateToAll = (event) => {
     sendBtn.addEventListener("click", () => {
     // if clicked, all dates will be saved for fireflies
       formActions.forEach((form) => {
-      // (form.action) => this is the URL to where the firefly will be patched
-          fetch(form.action, {
-            method: "PATCH",
-            headers: {"Accept": "text/plain"},
-            body: new FormData(form)
-          })
-          // .then((response) => response.text())
-          // .then((data) => {
-          // })
-            // (no promis needed here)
-        });
-        window.location.href = "http://localhost:3000/timeline"
+      // (field.action) => this is the URL to where the firefly will be patched
+        fetch(form.action, {
+          method: "PATCH",
+          headers: {"Accept": "text/plain"},
+          body: new FormData(form)
+        })
+        // .then((response) => response.text())
+        // .then((data) => console.log(data))
+        // console.log(new FormData(field))
       });
-
-    };
+      window.location.href = "http://localhost:3000/timeline"
+    });
+  };
 };
 
 export { dateToAll }
