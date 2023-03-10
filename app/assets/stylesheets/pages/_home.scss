@@ -1,1 +1,54 @@
 // Specific CSS for your home-page
+#timeline {
+  width: 800px;
+  height: 4px;
+  align-self: center;
+  background: rgba(248,224,8,0.8);
+  // background: linear-gradient(90deg, rgba(55,151,201,1) 0%, rgba(248,224,8,0.8) 80%);
+}
+
+.container-home {
+  display: flex;
+  justify-content: center;
+}
+
+.container-customer {
+  width: 960px;
+  margin: 64px auto;
+  text-align: center;
+}
+
+.container-customer h5 {
+  margin: 36px 0;
+}
+
+.last-section {
+  display: flex;
+  width: 960px;
+  margin: 64px auto;
+  justify-content: space-between;
+}
+
+.last-section-infos {
+  width: 400px;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 36px;
+  }
+}
+
+.cta-yellow {
+  color: #09578C;
+  text-decoration: none;
+  font-size: 18px;
+  justify-content: center;
+}
+
+.cta-yellow:hover {
+  color: #09578C;
+  background-color: white;
+}
