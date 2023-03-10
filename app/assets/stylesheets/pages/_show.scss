@@ -41,8 +41,31 @@
 }
 
 .show-container-info {
+  width: 706px;
+  height: 311px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
+.show-container-info-left {
+  text-align: center;
+
+  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
+  // 2/8
+  width: 529px;
+}
+
+.show-container-info-right {
+  text-align: center;
+
+  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
+  // 6/8
+  width: 176px;
+}
+
 
 .show-btn-container {
   display: flex;
