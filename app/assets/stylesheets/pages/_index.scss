@@ -1,7 +1,66 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "message_form";
+$primary-color: #888;
 
-.item:hover .innerText{
-  display: block;
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
+  text-decoration:none;
+  color:  rgb(201, 87, 163);
+}
+
+a {
+  text-decoration:none;
+}
+
+.little-thing {
+
+}
+
+.all-fireflies-inline {
+  padding-top: 50px;
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  align-content: space-around;
+  z-index: 1;
+}
+
+#timeline {
+  width: 800px;
+  height: 10px;
+  align-self: center;
+  margin-top: -.55em;
+
+
+
+
+  background: rgb(55,151,201);
+  background: linear-gradient(90deg, rgba(55,151,201,1) 0%, rgba(248,224,8,0.8) 80%);
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 500px;
+  padding-top: 50px;
+}
+
+.hover-links {
+  margin-top: -1.55em;
+}
+
+.date-firefly {
+  position: absolute;
+  top: 150px;
 }
