@@ -35,10 +35,6 @@ const dateToAll = (event) => {
     sendBtn.addEventListener("click", () => {
     // if clicked, all dates will be saved for fireflies
       formActions.forEach((field) => {
-        // const csrfToken = document.querySelector("[name='csrf-token']").content;
-        // let costumMail = field.querySelector("#firefly_email_recipient")
-        // let costumDate = field.querySelector(".date-form").value
-
       // (field.action) => this is the URL to where the firefly will be patched
         fetch(field.action, {
           method: "PATCH",
@@ -47,6 +43,7 @@ const dateToAll = (event) => {
         })
         .then((response) => response.text())
         .then((data) => console.log(data))
+        console.log(new FormData(field))
         });
 
       });
