@@ -16,7 +16,7 @@
     <p><strong></strong> <br><%= @firefly.message.letter  %></p>
   <% end %>
   <% if @firefly.message.image != nil %>
-    <p><strong></strong> <br><%= @firefly.message.image%></p>
+    <%= cl_image_tag @firefly.message.image.key, height:300, width:300, crop: :fill%>
   <% end %>
   <% if @firefly.message.video != nil %>
     <p><strong></strong> <br><%= @firefly.message.video %></p>
@@ -28,4 +28,3 @@
   <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </div>
   <%= link_to "My timeline", root_path %>
-
