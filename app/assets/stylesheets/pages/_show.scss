@@ -41,8 +41,10 @@
 }
 
 .show-container-info {
-  width: 706px;
-  height: 311px;
+  width: 8fr;
+  //width: 706px;
+  // height: 33%;
+  height: 331px;
 
   display: flex;
   justify-content: center;
@@ -50,28 +52,51 @@
   text-align: center;
 }
 
-.show-container-info-left {
+.show-container-info-grid {
+  display: grid;
+  // justify-content: center;
+  align-items: center;
   text-align: center;
-
-  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
-  // 2/8
-  width: 529px;
+  width: 100%;
+  height: 331px;
 }
 
-.show-container-info-right {
-  text-align: center;
-
-  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
-  // 6/8
-  width: 176px;
+.show-grid-row1 {
+  height: 110px; //165px(50%)
+  overflow-x: hidden;
+  overflow-y: scroll;
+  // padding: 0px 0px 25px;
+  padding: 25px 50px 50px;
 }
 
+.show-grid-row2 {
+  height: 220px; //165(50%)
+}
+
+.show-grid-txt {
+  flex-grow: 1;
+}
+
+// .show-grid-vid {
+//   flex-grow: 1;
+//   object-fit: cover;
+// }
+
+// .show-grid-img {
+//   flex-grow: 1;
+//   object-fit: cover;
+// }
+
+// .show-grid-aud {
+//   align-items: end;
+// }
+
+.show-sender-container {
+  display: flex;
+  justify-content: center;
+}
 
 .show-btn-container {
   display: flex;
   justify-content: center;
-
-  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
-  // footer fix
-  margin-bottom: 130px;
 }

@@ -7,7 +7,7 @@
                 <div class="dropdown-content">
                   <%= link_to "About us", root_path %>
                   <% if user_signed_in? %>
-                  <%= link_to "Create a firefly", root_path %>
+                  <%= link_to "Create a firefly", new_message_path %>
                   <% end %>
                   <%= link_to "Contact", root_path %>
                   <%= link_to "Legal", root_path %>
