@@ -1,10 +1,9 @@
 <h1>Create firefly</h1>
- <% flash.each do |no, msg| %>
+<%= render "fireflies/form" %>
+ <% flash.each do |notice, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
-
-<%= render "fireflies/form" %>
 
 <%= link_to "Timeline", root_path%>

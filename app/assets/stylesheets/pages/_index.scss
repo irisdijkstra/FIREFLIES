@@ -1,14 +1,15 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
-$primary-color: #888;
 
-// html,
-// body {
-//   position: relative;
-//   height: 100%;
-//   overflow: hidden;
-// }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
   text-decoration:none;
@@ -32,8 +33,9 @@ a {
 .create-firefly-button {
   width: 100%;
   text-align: center;
-  padding: 100px;
-
+  // padding: 100px;
+  min-height: 30%;
+  margin-bottom: -50px;
 }
 
 @keyframes pulse-red {
@@ -79,8 +81,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 210px;
-  padding-top: 250px;
+  min-height: 70%;
+  flex: 1 0 auto;
 }
 
 .hover-links {
