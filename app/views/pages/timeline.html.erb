@@ -1,4 +1,9 @@
 <%# <div style="height: 500px;"> %>
+<% flash.each do |notice, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 <div class="all">
 <div class="all-fireflies-inline">
 
