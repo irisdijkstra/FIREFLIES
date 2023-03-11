@@ -16,7 +16,7 @@
       <% if @firefly.message.letter != "" %>
         <p><strong></strong> <br><%= @firefly.message.letter  %></p>
       <% end %>
-      <% if @firefly.message.image != nil %>
+      <% if @firefly.message.image.attached?%>
         <%= cl_image_tag @firefly.message.image.key, height: 200, width: 200, crop: :fill%>
       <% end %>
       <% if @firefly.message.video != nil %>

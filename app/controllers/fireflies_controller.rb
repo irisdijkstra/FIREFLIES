@@ -12,10 +12,12 @@ class FirefliesController < ApplicationController
   def update
     @firefly = Firefly.find(params[:id])
     @firefly.update(firefly_params)
+      if @user.update
+        flash[:notice] = "Your profile has been updated."
+      end
 
     respond_to do |format|
-      format.html { redirect_to root_path } # if HTML requested, redirect to index
-      
+      format.html { redirect_to root_path} # if HTML requested, redirect to index
       format.text { render partial: "fireflies/form", locals: { firefly: @firefly }, formats: [:html] }
     end
   end
