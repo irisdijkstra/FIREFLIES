@@ -8,7 +8,9 @@
   position: fixed;
   top: 0;
   width: 1040px;
-  margin-top: 16px;
+  padding-top: 16px;
+  transition: 0.3s ease-in-out;
+  z-index: 100;
 }
 
 .nav-firefly p {
@@ -107,4 +109,8 @@
 .login-style-none {
   color:#05031d20 !important;
   padding: 0 !important;
+}
+
+.navColor {
+  background-color: #05031d !important;
 }
