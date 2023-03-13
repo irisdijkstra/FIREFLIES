@@ -4,7 +4,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-img {
+.card__image {
   max-width: 100%;
 }
 
@@ -23,7 +23,7 @@ img {
   background: #fcf29c;
   filter: brightness(70%);
   width: 260px;
-  height: 55vh;
+  height: 50vh;
   border-radius: 6px;
   padding: 1rem;
   color: #05031d;
