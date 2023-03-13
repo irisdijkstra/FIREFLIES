@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def timeline
     @fireflies = Firefly.where(email_recipient: current_user.email).order("date_recieve ASC")
+    @first_to_come = @fireflies.find_by("date_recieve > ?", Date.today)
   end
 
   # don't remove it, need it later
