@@ -1,36 +1,32 @@
 <%# <div style="height: 500px;"> %>
-<%# <% flash.each do |notice, msg| %>
-  <%# <div> %>
-    <%# <%= msg %>
-  <%# </div> %>
-<%# <% end %>
-
 <div class="all">
-<div class="all-fireflies-inline">
+  <div class="all-fireflies-inline">
+    <% @fireflies.each do |firefly| %>
+      <% if firefly.date_recieve.present? %>
+        <div class="item" style="width: max-content;" >
+          <div class="hover-links">
+            <div class="date-firefly position-absolute" style="display: none;">
+              <%= firefly.date_recieve.strftime('%d %b %Y') %>
+            </div>
 
-  <% @fireflies.each do |firefly| %>
-    <% if firefly.date_recieve.present? %>
-      <div class="item" style="width: max-content;" >
-        <div class="hover-links">
-              <div class="date-firefly position-absolute" style="display: none;">
-          <%= firefly.date_recieve.strftime('%d %b %Y') %>
+            <% if firefly.date_recieve <= Date.today %>
+              <%= link_to firefly_path(firefly) do %>
+                <div class="little-thing"></div>
+              <% end %>
+            <% else %>
+                <div class="little-thing-white"></div>
+            <% end %>
+          </div>
         </div>
+    <% end %>
 
-        <% if firefly.date_recieve <= Date.today %>
-          <%= link_to firefly_path(firefly) do %>
-            <div class="little-thing"></div>
-          <% end %>
-        <% else %>
-            <div class="little-thing-white"></div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-
-  <% end %>
+    <% end %>
   </div>
-    <div id="timeline">
+
+  <div id="timeline">
+  </div>
+
+  <div class="create-firefly-button" >
+    <%= link_to "Create a firefly", new_message_path, class: "cta-white"%>
   </div>
 </div>
-<div class="create-firefly-button" >
-<%= link_to "Create a firefly", new_message_path, class: "cta-white"%>

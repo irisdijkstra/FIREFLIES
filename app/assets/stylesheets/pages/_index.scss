@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "message_form";
+
 @import "show";
 
 body,
@@ -9,6 +11,8 @@ html {
   display: flex;
   flex-direction: column;
 }
+
+
 
 
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
@@ -90,7 +94,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 70%;
+  min-height: 70vh;
   flex: 1 0 auto;
 }
 
