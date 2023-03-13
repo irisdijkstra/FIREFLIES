@@ -2,10 +2,6 @@
   width: 960px;
   margin: 64px auto;
 
-  // THIS ONE IS TEMPORARY (FOR PRESENTATION)
-  // align middle
-  margin-top: 210px;
-
   text-align: center;
   display: flex;
   justify-content: center;
@@ -13,14 +9,13 @@
 }
 
 .show-container-outside {
-  width: 70vw;
-  height: 60vw;
-  // width: 746px;
-  // height: 351px;
+  width: 61vw;
+  height: 41vw;
+
   border: 15px;
-  text-align: center;
   box-sizing: border-box;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   left: 0%;
@@ -33,10 +28,8 @@
 }
 
 .show-container-inside {
-  // width: 726px;
-  // height: 331px;
-  width: 9fr;
-  height: 8fr;
+  width: 60vw;
+  height: 40vw;
 
   top: 10px;
   left: 11px;
@@ -47,7 +40,7 @@
 }
 
 .show-container-info {
-  width: 8fr;
+  // width: 8fr;
   //width: 706px;
   // height: 33%;
   // height: 331px;
