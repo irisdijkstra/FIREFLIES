@@ -4,13 +4,13 @@
 
 @import "show";
 
-//body,
-//html {
-//  height: 100%;
-//  margin: 0;
-//  display: flex;
-//  flex-direction: column;
-//}
+body,
+html {
+ height: 100%;
+ margin: 0;
+ display: flex;
+ flex-direction: column;
+}
 
 
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
