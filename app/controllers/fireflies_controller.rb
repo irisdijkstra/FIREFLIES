@@ -15,7 +15,6 @@ class FirefliesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_path } # if HTML requested, redirect to index
-      
       format.text { render partial: "fireflies/form", locals: { firefly: @firefly }, formats: [:html] }
     end
   end
