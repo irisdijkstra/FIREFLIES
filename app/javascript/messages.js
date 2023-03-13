@@ -8,7 +8,23 @@ const addMail = () => {
       addMailsContainer.insertAdjacentHTML("afterbegin", mailTag);
     });
   }
-
 }
 
-export { addMail }
+function openSelector(input) {
+  input.click();
+}
+
+const pencil = document.getElementById("pencil");
+const image = document.getElementById("message_image");
+const text = document.querySelector(".add-mails-input");
+// pencil.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const input1 = document.querySelector(".input1");
+//   input1.click();
+// });
+
+function clickInput(target) {
+  document.querySelector(`.${target}`).click();
+}
+
+export { addMail, clickInput }
