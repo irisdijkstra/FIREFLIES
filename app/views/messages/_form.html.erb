@@ -1,15 +1,27 @@
- <%= simple_form_for [@user, @message] do |f| %>
-   <%= f.label :recipients %>
+<div class="container-messages">
+<%= simple_form_for [@user, @message] do |f| %>
+   <%#= f.label :recipients %>
      <div class="add-mails">
        <input type="text" name="emails[]" class="add-mails-input">
      </div>
-     <div class="add-mails-btn"> add email</div>
-   <%= f.input :letter, as: :file, style: "visibility:hidden", label: image_tag("pencil.png").html_safe %>
-   <%= f.input :photo, as: :file, style: "visibility: hidden", label: image_tag("image.png").html_safe %>
-   <%= f.input :video, as: :file, style: "visibility:hidden", label: image_tag("video.png").html_safe %>
-   <%= f.input :audio, as: :file, style: "visibility: hidden", label: image_tag("music.png").html_safe %>
-      <br>
-      <%= f.submit "Create a message"%>
-<% end %>
+   <div class="btn-form-blue position-fixed">Add Email</div>
+
+   <div class="show-wrapper">
+     <textarea class="show-container-input" name="message" id="message" ></textarea>
+
+     <div class="media-wrapper d-flex">
+       <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe %>
+       <%= f.input :image, as: :file, class: "img-btn", label: image_tag("image.png", size: '50').html_safe %>
+       <%= f.input :video, class: "img-btn", label: image_tag("video.png", size: '50').html_safe %>
+       <%= f.input :audio, class: "img-btn", label: image_tag("music.png", size: '50').html_safe %>
+
+     </div>
+      <%= f.submit "Create a Message", class: "btn-white"%>
+
+
+  </div>
+  <% end %>
+</div>
 
  <%#= f.input :photo, as: :file, style: "visibility: hidden", label: "<h1>icon</h1>".html_safe %>
+<%#= f.input :letter, as: :file, style: "visibility:hidden", label: image_tag("pencil.png").html_safe %>
