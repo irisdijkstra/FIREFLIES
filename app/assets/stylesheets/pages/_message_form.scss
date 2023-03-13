@@ -3,14 +3,11 @@
     width: 650px;
 }
 .add-mails {
+  margin: 10px;
   position: relative;
   width: 746px;
   height: 64px;
   box-sizing: border-box;
-  //left: 0%;
-  //right: 0.13%;
-  //top: 0%;
-  //bottom: 88.75%;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(200, 200, 200, 0.8);
   border-radius: 15px;
@@ -23,13 +20,13 @@
     left: 11px;
     border-radius: 15px;
     box-sizing: border-box;
-    //position: absolute;
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(200, 200, 200, 0.8);
   }
 }
 
 .show-wrapper{
+  margin: 10px;
   width: 746px;
   height: 351px;
   box-sizing: border-box;
@@ -61,11 +58,12 @@
   border-radius: 15px;;
 }
 
-.media-wrapper input {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
+//.media-wrapper input {
+//  background: rgba(255, 255, 255, 0.5);
+//  border: 1px solid rgba(255, 255, 255, 0.8);
+//}
 
 .img-btn{
   height: 50px;
+  justify-content: space-between;
 }

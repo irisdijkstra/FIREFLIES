@@ -1,24 +1,41 @@
 <div class="container-messages">
-<%= simple_form_for [@user, @message] do |f| %>
-   <%#= f.label :recipients %>
-     <div class="add-mails">
-       <input type="text" name="emails[]" class="add-mails-input">
-     </div>
-   <div class="btn-form-blue position-fixed add-mails-btn">Add Email</div>
+  <%= simple_form_for [@user, @message] do |f| %>
+    <%#= f.label :recipients %>
+    <div class="add-mails">
+      <input type="text" name="emails[]" class="add-mails-input">
+      <div class="btn-form-blue position-fixed">Add Email</div>
+    </div>
 
-   <div class="show-wrapper">
+    <div class="show-wrapper">
+      <div class="media-wrapper d-flex justify-content-center">
+        <div id="pencil"> <%=  image_tag("pencil.png", size: '50').html_safe %></div>
+        <div id="image"><%=  image_tag("image.png", size: '50').html_safe %></div>
+        <%=  image_tag("video.png", size: '50').html_safe %>
+        <%=  image_tag("music.png", size: '50').html_safe %>
+      </div>
+      <div class="media-wrapper d-flex d-none">
+        <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe %>
+        <%= f.input :image, as: :file, class: "img-btn", label: image_tag("image.png", size: '50').html_safe %>
+        <%= f.input :video, class: "img-btn", label: image_tag("video.png", size: '50').html_safe %>
+        <%= f.input :audio, class: "img-btn", label: image_tag("music.png", size: '50').html_safe %>
+      </div>
 
-     <div class="media-wrapper d-flex">
-       <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe %>
-       <%= f.input :image, as: :file, class: "img-btn", label: image_tag("image.png", size: '50').html_safe %>
-       <%= f.input :video, class: "img-btn", label: image_tag("video.png", size: '50').html_safe %>
-       <%= f.input :audio, class: "img-btn", label: image_tag("music.png", size: '50').html_safe %>
-
-     </div>
       <%= f.submit "Create a Message", class: "btn-white"%>
-
-  </div>
+    </div>
   <% end %>
-</div>
 
+  <script type="text/javascript" charset="utf-8">
+      const image_tag = document.getElementById("image_tag");
+      image_tag.addEventListener("click", (e) => {
+          openSelector(e);
+      });
+
+      function openSelector(event) {
+          event.preventDefault();
+
+          const input = document.getElementById("input");
+          input.click();
+      }
+  </script>
+</div>
 
