@@ -1,7 +1,5 @@
 .page-container {
-  width: 960px;
   margin: 64px auto;
-
   text-align: center;
   display: flex;
   justify-content: center;
@@ -40,20 +38,19 @@
 }
 
 .show-container-info {
-  // width: 8fr;
-  //width: 706px;
-  // height: 33%;
-  // height: 331px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  object-fit: scale-down;
+
 }
 
 .show-container-info-grid {
   display: grid;
-  // justify-content: center;
+  padding: 10px;
+  grid-gap: 10px;
+
   align-items: center;
   text-align: center;
   // width: 100%;
@@ -61,36 +58,54 @@
 }
 
 .show-grid-row1 {
-  height: 110px; //165px(50%)
-  overflow-x: hidden;
-  overflow-y: scroll;
+  // height: 110px; //165px(50%)
+  // overflow-x: hidden;
+  // overflow-y: scroll;
   // padding: 0px 0px 25px;
-  padding: 25px 50px 50px;
+  // padding: 25px 50px 50px;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .show-grid-row2 {
-  height: 220px; //165(50%)
+  // height: 220px; //165(50%)
 }
 
 .show-grid-txt {
   flex-grow: 1;
+  overflow: scroll;
 }
 
 .show-grid-vid {
   flex-grow: 1;
   object-fit: cover;
   border-radius: 15px;
+
+  object-fit: scale-down;
+  flex: 1;
+
+  max-width: fit-content;
+  max-height: fit-content;
 }
 
 .show-grid-img {
   flex-grow: 1;
   object-fit: cover;
   border-radius: 15px;
+
+  object-fit: scale-down;
+  flex: 1;
+
+  max-width: fit-content;
+  max-height: fit-content;
 }
 
-// .show-grid-aud {
-//   align-items: end;
-// }
+.show-grid-aud {
+  grid-column: 1/4;
+
+  object-fit: scale-down;
+  flex: 1;
+}
 
 .show-sender-container {
   display: flex;

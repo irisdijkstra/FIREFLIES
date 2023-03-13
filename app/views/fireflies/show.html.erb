@@ -1,7 +1,8 @@
 <div class="page-container">
   <div class="show-container-outside">
     <div class="show-container-inside">
-        <div class="show-container-info">
+
+        <%# <div class="show-container-info"> %>
 
             <div class="show-container-info-grid">
 
@@ -13,7 +14,7 @@
                 </div>
                 <div class="show-grid-img col-8">
                   <% if @firefly.message.image != nil %>
-                      <%= @firefly.message.image%>
+                      <% @firefly.message.image %>
                   <% end %>
                     <%# TEMP IMAGE PLACEHOLDER:%>
                   <img src="https://source.unsplash.com/random/320x240/?love" alt="">
@@ -44,8 +45,8 @@
               </div>
 
             </div>
+        <%# </div> %>
 
-      </div>
     </div>
   </div>
 </div>
