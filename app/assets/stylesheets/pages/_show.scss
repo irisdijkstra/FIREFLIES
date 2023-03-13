@@ -6,11 +6,11 @@
   align-items: center;
 }
 
-////////////////////////
+////////////////////////////////////////////////
 
 .show-container-outside {
   width: 61vw;
-  height: 41vw;
+  height: 34vw;
 
   border: 15px;
   box-sizing: border-box;
@@ -22,27 +22,32 @@
   right: 0.13%;
   top: 0%;
   bottom: 88.75%;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 15px;
+
+  background: #05031d70;
+  // background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .show-container-inside {
   width: 60vw;
-  height: 40vw;
+  height: 33vw;
 
   top: 10px;
   left: 11px;
   border-radius: 15px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.5);
+
+  background: transparent;
+  // background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .show-container-info-grid {
   display: grid;
-  padding: 10px;
-  grid-gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 2rem;
 
   width: 100%;
   height: 100%;
@@ -50,43 +55,68 @@
   // text-align: center;
 }
 
-.row {
+.row-2 {
   overflow: auto;
+}
+
+.d-flex {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.d-flex .txt-aud {
+  justify-content: space-between;
+  height: 80%;
+}
+
+.aud-vid {
+  overflow: hidden;
+  align-items: center;
+}
+
+.show-grid-img {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.show-grid-vid {
+  width: 100%;
+
+  video {
+    width: 100%;
+  }
 }
 
 .show-grid-txt {
   padding-top: 5px;
   overflow: scroll;
   align-items: stretch;
+
 }
 
 .show-grid-vid {
   align-items: stretch;
-
   border-radius: 15px;
-  top: 50%;
-  right: 50%
 }
 
 .show-grid-img {
-  // flex-grow: 1;
-  // object-fit: cover;
   align-items: stretch;
-
   border-radius: 15px;
-  top: 50%;
-  right: 50%
 }
 
 .show-grid-aud {
 
 }
 
-////////////////////////
+////////////////////////////////////////////////
 
 .show-sender-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .show-btn-container {
