@@ -1,15 +1,15 @@
  <%= simple_form_for [@user, @message] do |f| %>
-      <%= f.input :letter%>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :video, as: :file %>
-      <%= f.input :audio%>
-
-      <%= f.label :recipients %>
-      <div class="add-mails">
-        <input type="text" name="emails[]" class="add-mails-input form-control">
-      </div>
-      <div class="add-mails-btn"> add email</div>
-
+   <%= f.label :recipients %>
+     <div class="add-mails">
+       <input type="text" name="emails[]" class="add-mails-input">
+     </div>
+     <div class="add-mails-btn"> add email</div>
+   <%= f.input :letter, style: "visibility:hidden", label: image_tag("pencil.png").html_safe %>
+   <%= f.input :image, as: :file, style: "visibility: hidden", label: image_tag("image.png").html_safe %>
+   <%= f.input :video, style: "visibility:hidden", label: image_tag("video.png").html_safe %>
+   <%= f.input :audio, style: "visibility: hidden", label: image_tag("music.png").html_safe %>
       <br>
       <%= f.submit "Create a message"%>
 <% end %>
+
+ <%#= f.input :photo, as: :file, style: "visibility: hidden", label: "<h1>icon</h1>".html_safe %>
