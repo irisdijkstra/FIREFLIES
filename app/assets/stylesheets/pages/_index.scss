@@ -71,12 +71,14 @@ a {
 .all-fireflies-inline {
   padding-top: 50px;
   display: flex;
-  width: 400px;
+  width: 700px;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  align-content: space-around;
   z-index: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 #timeline {
@@ -100,11 +102,12 @@ a {
 
 .hover-links {
   margin-top: -1.55em;
+  padding-right: 10px;
 }
 
 .date-firefly {
   position: absolute;
-  top: 220px;
+  top: 250px;
 }
 
 .little-thing:hover {
