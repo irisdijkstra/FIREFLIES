@@ -6,6 +6,8 @@
   align-items: center;
 }
 
+////////////////////////
+
 .show-container-outside {
   width: 61vw;
   height: 41vw;
@@ -37,75 +39,50 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.show-container-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  object-fit: scale-down;
-
-}
-
 .show-container-info-grid {
   display: grid;
   padding: 10px;
   grid-gap: 10px;
 
-  align-items: center;
-  text-align: center;
-  // width: 100%;
-  // height: 331px;
+  width: 100%;
+  height: 100%;
+  // align-items: center;
+  // text-align: center;
 }
 
-.show-grid-row1 {
-  // height: 110px; //165px(50%)
-  // overflow-x: hidden;
-  // overflow-y: scroll;
-  // padding: 0px 0px 25px;
-  // padding: 25px 50px 50px;
-  overflow-x: scroll;
-  overflow-y: scroll;
-}
-
-.show-grid-row2 {
-  // height: 220px; //165(50%)
+.row {
+  overflow: auto;
 }
 
 .show-grid-txt {
-  flex-grow: 1;
+  padding-top: 5px;
   overflow: scroll;
+  align-items: stretch;
 }
 
 .show-grid-vid {
-  flex-grow: 1;
-  object-fit: cover;
+  align-items: stretch;
+
   border-radius: 15px;
-
-  object-fit: scale-down;
-  flex: 1;
-
-  max-width: fit-content;
-  max-height: fit-content;
+  top: 50%;
+  right: 50%
 }
 
 .show-grid-img {
-  flex-grow: 1;
-  object-fit: cover;
+  // flex-grow: 1;
+  // object-fit: cover;
+  align-items: stretch;
+
   border-radius: 15px;
-
-  object-fit: scale-down;
-  flex: 1;
-
-  max-width: fit-content;
-  max-height: fit-content;
+  top: 50%;
+  right: 50%
 }
 
 .show-grid-aud {
-  grid-column: 1/4;
 
-  object-fit: scale-down;
-  flex: 1;
 }
+
+////////////////////////
 
 .show-sender-container {
   display: flex;
