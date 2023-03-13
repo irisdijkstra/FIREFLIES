@@ -84,6 +84,7 @@ a {
   height: 15px;
   align-self: center;
   margin-top: -.55em;
+  margin-bottom: 200px;
   border-radius: 10px;
   animation: border-flicker 2s linear infinite;
   background: rgb(55,151,201);
@@ -104,7 +105,7 @@ a {
 
 .date-firefly {
   position: absolute;
-  top: 220px;
+  top:200px;
 }
 
 .little-thing:hover {
