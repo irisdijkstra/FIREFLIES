@@ -4,7 +4,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.card_image {
+
+.card__image {
+
   max-width: 100%;
 }
 
@@ -23,7 +25,7 @@
   background: #fcf29c;
   filter: brightness(70%);
   width: 260px;
-  height: 55vh;
+  height: 50vh;
   border-radius: 6px;
   padding: 1rem;
   color: #05031d;

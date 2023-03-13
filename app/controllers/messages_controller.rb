@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    raise
     @message = Message.new(message_params)
     @message.user_id = current_user.id
     @message.email_to = params[:emails]

@@ -20,18 +20,15 @@
   <br>
   <div id="form-each" class="d-none">
     <% @message.fireflies.each do |firefly| %>
-      <p>change date for <strong><%= firefly.email_recipient %></strong></p>
         <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
           <%= f.input :email_recipient %>
           <%# Original input for date below, not manipulatable: %>
           <%# f.input :date_recieve, as: :date, html5: true %>
           <input class="form-select mx-1 date optional date-form" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
-       
-          <%= f.submit "Send firefly" %>
         <% end %>
     <% end %>
-    <%# <%= render 'form', firefly: firefly %>
   </div>
     <br>
     <br>
   </div>
+
