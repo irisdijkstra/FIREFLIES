@@ -12,16 +12,16 @@ class FirefliesController < ApplicationController
   def update
     @firefly = Firefly.find(params[:id])
     @firefly.update(firefly_params)
-
     respond_to do |format|
       format.html { redirect_to root_path } # if HTML requested, redirect to index
-      
       format.text { render partial: "fireflies/form", locals: { firefly: @firefly }, formats: [:html] }
     end
+    raise
   end
 
   def destroy
     @firefly.destroy!
+    flash[:notice] = "Firefly has been destroyed."
     redirect_to root_path
   end
 
