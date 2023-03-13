@@ -1,33 +1,71 @@
 <div class="page-container">
-    <div class="show-container">
-      <div class="show-container-input">
-      <% if @firefly.message.user == current_user %>
-        <p>This firefly is send to <strong> myself </strong></p>
-      <% else %>
-        <p><strong>Received from: </strong> <br>
-        <%= @firefly.message.user.first_name %>
-        <%= @firefly.message.user.last_name %> --
-        <%= @firefly.message.user.email %> </p>
-      <% end %>
+  <div class="show-container-outside">
+    <div class="show-container-inside">
+        <div class="show-container-info">
 
-      <p><strong>Date sent: </strong> <br><%=  @firefly.date_sent %></p>
-      <p><strong>Date recieved: </strong> <br><%= @firefly.date_recieve %></p>
+            <div class="show-container-info-grid">
 
-      <% if @firefly.message.letter != "" %>
-        <p><strong></strong> <br><%= @firefly.message.letter  %></p>
-      <% end %>
-      <% if @firefly.message.image.attached?%>
-        <%= cl_image_tag @firefly.message.image.key, height: 200, width: 200, crop: :fill%>
-      <% end %>
-      <% if @firefly.message.video != nil %>
-        <p><strong></strong> <br><%= @firefly.message.video %></p>
-      <% end %>
-      <% if @firefly.message.audio != "" %>
-        <p><strong></strong> <br><%= @firefly.message.audio %></p>
-      <% end %>
+              <div class="show-grid-row1 row">
+                <div class="show-grid-txt col-4">
+                  <% if @firefly.message.letter != "" %>
+                      <%= @firefly.message.letter %>
+                  <% end %>
+                </div>
+                <div class="show-grid-img col-8">
+                  <% if @firefly.message.image != nil %>
+                      <%= @firefly.message.image%>
+                  <% end %>
+                    <%# TEMP IMAGE PLACEHOLDER:%>
+                  <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+                </div>
+              </div>
+
+              <div class="show-grid-row2 row">
+                <div class="show-grid-aud col-4">
+                  <% if @firefly.message.audio != "" %>
+                    <br>
+                    <%= @firefly.message.audio %>
+                  <% end %>
+                    <%# TEMP AUDIO PLACEHOLDER %>
+                    <audio controls>
+                        <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                    </audio>
+                </div>
+                <div class="show-grid-vid col-8">
+                  <% if @firefly.message.video != nil %>
+                      <%= @firefly.message.video %>
+                  <% end %>
+                    <%# TEMP VIDEO PLACEHOLDER %>
+                    <%# <video width="320" height="240" controls>
+                        <source src="flowers-68367.mp4" type="video/mp4">
+                    </video> %>
+                    <img src="https://source.unsplash.com/random/320x239/?love" alt="">
+                </div>
+              </div>
+
+            </div>
+
+      </div>
     </div>
   </div>
+</div>
 
-    <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <%= link_to "My timeline", root_path %>
+<div class="show-sender-container">
+  <% if @firefly.message.user == current_user %>
+    <p>This firefly is send to <strong> myself </strong></p> |
+  <% else %>
+    <p><strong>Received from: </strong> <br>
+    <%= @firefly.message.user.first_name %>
+    <%= @firefly.message.user.last_name %> --
+    <%= @firefly.message.user.email %> </p> |
+  <% end %>
+  <br>
+  <p><strong> Sent: </strong> <%= @firefly.date_sent %></p> |
+  <p><strong> Received: </strong> <%= @firefly.date_recieve %></p>
+  <br><br>
+</div>
+
+<div class="show-btn-container">
+  <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
+  <%= link_to "My timeline", timeline_path %>
 </div>
