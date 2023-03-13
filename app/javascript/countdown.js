@@ -7,8 +7,19 @@ const countdown = () => {
   var now = new Date().getTime();
   const waiting = new Date(deadline).getTime() - now
 
+  // const dateCurrentMili = new Date().getTime()
+  console.log(new Date(waiting).getTime())
+
+
+  const dateMili = new Date(deadline).getTime()
+  console.log(new Date(dateMili).toString())
+
+
   let days = Math.floor(waiting / (1000 * 60 * 60 * 24))
-  let hours = Math.floor((waiting % (1000 * 60 * 60 )) / (1000 * 60 * 60 * 24));
+  let remainingWithoutDays = waiting - (days * 1000 * 60 * 60 * 24)
+
+  let hours = Math.floor(remainingWithoutDays / (1000 * 60 * 60 ));
+
   let minutes = Math.floor((waiting % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((waiting % (1000 * 60)) / 1000);
 
@@ -18,7 +29,6 @@ const countdown = () => {
 
 
   console.log(deadline)
-  console.log(today)
   console.log(waiting)
   console.log(days)
   console.log(hours)
