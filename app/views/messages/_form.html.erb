@@ -9,7 +9,7 @@
     <div class="show-wrapper">
       <div class="media-wrapper d-flex justify-content-center">
         <div id="pencil"> <%=  image_tag("pencil.png", size: '50').html_safe %></div>
-        <div id="image"><%=  image_tag("image.png", size: '50').html_safe %></div>
+        <%=  image_tag("image.png", size: '50').html_safe %>
         <%=  image_tag("video.png", size: '50').html_safe %>
         <%=  image_tag("music.png", size: '50').html_safe %>
       </div>
@@ -25,8 +25,8 @@
   <% end %>
 
   <script type="text/javascript" charset="utf-8">
-      const image_tag = document.getElementById("image_tag");
-      image_tag.addEventListener("click", (e) => {
+      const pencil = document.getElementById("pencil");
+      pencil.addEventListener("click", (e) => {
           openSelector(e);
       });
 
