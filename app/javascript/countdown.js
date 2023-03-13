@@ -23,7 +23,8 @@ const countdown = () => {
   let minutes = Math.floor((waiting % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((waiting % (1000 * 60)) / 1000);
 
-  clock.innerHTML = days + " days " + hours + " hours "+ minutes + " minutes " + seconds + " seconds ";
+  clock.innerHTML = ('0' + days).slice(-2) + "d - " + ('0' + hours).slice(-2) +"h - "+ ('0' + minutes).slice(-2) + "m - " + ('0' + seconds).slice(-2) + "s ";
+
 
 }, 1000);
 
