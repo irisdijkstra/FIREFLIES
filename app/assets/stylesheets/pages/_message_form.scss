@@ -1,34 +1,69 @@
-$formBlue: #004B7D;
-$borderColor: rgba(255, 255, 255, 0.8);
-$formFillColor: rgba(255, 255, 255, 0.5);
-
+.container-messages{
+    margin: 60px auto;
+    width: 650px;
+}
 .add-mails {
+  margin: 10px;
+  position: relative;
   width: 746px;
   height: 64px;
-  border: 15px;
   box-sizing: border-box;
-  position: static;
-  left: 0%;
-  right: 0.13%;
-  top: 0%;
-  bottom: 88.75%;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(200, 200, 200, 0.8);
   border-radius: 15px;
 
   .add-mails-input {
+    position: relative;
     width: 726px;
     height: 44px;
     top: 10px;
     left: 11px;
     border-radius: 15px;
     box-sizing: border-box;
-    //position: absolute;
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(200, 200, 200, 0.8);
   }
 }
 
-//.photo-field {
-//  visibility: hidden;
+.show-wrapper{
+  margin: 10px;
+  width: 746px;
+  height: 351px;
+  box-sizing: border-box;
+  text-align: center;
+  //left: 0%;
+  //right: 0.13%;
+  //top: 0%;
+  //bottom: 88.75%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+}
+
+.show-container-input{
+  width: 726px;
+  height: 331px;
+  top: 10px;
+  left: 11px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.media-wrapper{
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 15px;;
+}
+
+//.media-wrapper input {
+//  background: rgba(255, 255, 255, 0.5);
+//  border: 1px solid rgba(255, 255, 255, 0.8);
 //}
+
+.img-btn{
+  height: 50px;
+  justify-content: space-between;
+}

@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    UserMailer.welcome.deliver_now
     redirect_to timeline_path if current_user
   end
 
