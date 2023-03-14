@@ -5,7 +5,7 @@ const addMail = () => {
 
   if(addMailsButton) {
     addMailsButton.addEventListener("click", () => {
-      addMailsContainer.insertAdjacentHTML("beforeend", mailTag);
+      addMailsContainer.insertAdjacentHTML("afterbegin", mailTag);
     });
   }
 
