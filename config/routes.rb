@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get "/timeline", to: "pages#timeline", as: :timeline
+  get "/about", to: "pages#about", as: :about
 
   resources :fireflies, only: %i[show destroy update]
 end
