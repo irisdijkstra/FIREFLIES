@@ -6,13 +6,11 @@ const countdown = () => {
 
   var now = new Date().getTime();
   const waiting = new Date(deadline).getTime() - now
-
-  // const dateCurrentMili = new Date().getTime()
-  console.log(new Date(waiting).getTime())
+  // console.log(new Date(waiting).getTime())
 
 
   const dateMili = new Date(deadline).getTime()
-  console.log(new Date(dateMili).toString())
+  // console.log(new Date(dateMili).toString())
 
 
   let days = Math.floor(waiting / (1000 * 60 * 60 * 24))
