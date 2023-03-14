@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 70px;
   }
 
   .hr-line{
@@ -11,8 +13,7 @@
   }
 
   .faq-page {
-    /* background-color: #eee; */
-    color: rgba(10, 175, 230, 1);
+    color:  rgba(238, 235, 169, 0.9);
     cursor: pointer;
     padding: 20px 10px;
     width: 60%;
@@ -20,11 +21,11 @@
     outline: none;
     transition: 0.4s;
     margin: auto;
+    border-radius: 10px;
 }
 
 .faq-body{
   margin: auto;
-  /* text-align: center; */
  width: 50%;
  padding: auto;
 
@@ -32,25 +33,33 @@
 
 .active,
 .faq-page:hover {
-    background-color: #f6f39e;
+background-color: rgba(255, 255, 255, 0.354);
 }
 
 .faq-body {
   padding: 0 10px;
-  background-color: white;
+  background-color: linear-gradient(180deg, #05031D 72.92%, #003E68 100%);
   display: none;
   overflow: hidden;
 }
 
 .faq-page:after {
   content: '+';
-  /* Unicode character for "plus" sign (+) */
   font-size: 30px;
-  color: white;
+  color: rgba(239, 234, 128, 0.9);
   float: right;
   margin-left: 5px;
 }
 .active:after {
-  content: "\2796";
-  /* Unicode character for "minus" sign (-) */
+  content: "+";
+  font-size: 30px;
+}
+
+.buttons-about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  padding: 30px;
 }
