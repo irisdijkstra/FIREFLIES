@@ -1,30 +1,32 @@
-<div class="send-form-container">
-  <h2>Add date to your firefly</h2>
-
-    <div id="form-all">
-      <%# first div below obtained from inspect (form) %>
-      <%# !!! LEAVE ID "firefly-date-recieve-all" IN FIRST INPUT (JS) !!!  %>
-      <div class="d-flex flex-row justify-content-between align-items-center">
-        <input class="form-select mx-1 date optional" type="date" name="firefly[date_recieve]" id="firefly-date-recieve-all">
+<div class="send-form-btns-date-container">
+  <div class="send-form-date-container">
+    <h2>Add date to your firefly</h2>
+      <div id="form-all">
+        <%# first div below obtained from inspect (form) %>
+        <%# !!! LEAVE ID "firefly-date-recieve-all" IN FIRST INPUT (JS) !!!  %>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <input class="form-select mx-1 date optional" type="date" name="firefly[date_recieve]" id="firefly-date-recieve-all">
+        </div>
       </div>
-
-      <div class="d-flex">
-      <%# With apply all you will apply to all messages %>
-        <div id="apply-all-btn" class="cta-white"> APPLY TO ALL </div>
-        <div id="costumize-btn" class="cta-white"> COSTUMIZE </div>
-        <div id="send-btn" class="cta-white"> SEND </div>
+      <div id="form-each" class="d-none">
+        <% @message.fireflies.each do |firefly| %>
+            <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
+              <%= f.input :email_recipient %>
+              <%# Original input for date below, not manipulatable: %>
+              <%# f.input :date_recieve, as: :date, html5: true %>
+              <input class="form-select mx-1 date optional date-form" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
+            <% end %>
+        <% end %>
       </div>
-    </div>
+  </div>
+  <div class="btns-container-date">
+    <div id="send-btn" class="cta-white"> SEND </div>
 
-    <div id="form-each" class="d-none">
-      <% @message.fireflies.each do |firefly| %>
-          <%= simple_form_for(firefly, method: :patch, url: firefly_path(firefly)) do |f| %>
-            <%= f.input :email_recipient %>
-            <%# Original input for date below, not manipulatable: %>
-            <%# f.input :date_recieve, as: :date, html5: true %>
-            <input class="form-select mx-1 date optional date-form" type="date" name="firefly[date_recieve]" id="firefly_date_recieve">
-          <% end %>
-      <% end %>
+    <div class="btns-container-date-flex d-flex">
+    <%# With apply all you will apply to all messages %>
+      <div id="apply-all-btn" class="cta-white"> APPLY TO ALL </div>
+      <div id="costumize-btn" class="cta-white"> COSTUMIZE </div>
     </div>
-
+    
+  </div>
 </div>

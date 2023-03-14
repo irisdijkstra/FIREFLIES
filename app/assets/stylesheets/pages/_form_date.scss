@@ -1,17 +1,32 @@
-
-.send-form-container {
+.send-form-btns-date-container {
   padding: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-};
-
-h2, .firefly-date-recieve-all {
-  margin-bottom: 32px;
 }
 
-.form-each {
+.send-form-date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2, .firefly-date-recieve-all {
+    margin-bottom: 32px;
+  }
+};
+
+#send-btn {
   margin-top: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+}
+
+.btns-container-date-flex {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#form-each {
+  margin-top: 32px;
 }
