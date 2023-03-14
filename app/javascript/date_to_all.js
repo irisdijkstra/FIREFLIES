@@ -34,18 +34,24 @@ const dateToAll = (event) => {
   if(sendBtn) {
     sendBtn.addEventListener("click", () => {
     // if clicked, all dates will be saved for fireflies
-      formActions.forEach((form) => {
-      // (field.action) => this is the URL to where the firefly will be patched
-        fetch(form.action, {
-          method: "PATCH",
-          headers: {"Accept": "text/plain"},
-          body: new FormData(form)
-        })
-        // .then((response) => response.text())
-        // .then((data) => console.log(data))
-        // console.log(new FormData(field))
-      });
-      window.location.href = "http://localhost:3000/timeline"
+      dateEach.forEach((date) => {
+      if (date.value == "") {
+        date.value = dateAll.value;
+      }
+    });
+
+        formActions.forEach((form) => {
+        // (field.action) => this is the URL to where the firefly will be patched
+          fetch(form.action, {
+            method: "PATCH",
+            headers: {"Accept": "text/plain"},
+            body: new FormData(form)
+          })
+          // .then((response) => response.text())
+          // .then((data) => console.log(data))
+          // console.log(new FormData(field))
+        });
+        window.location.href = "http://localhost:3000/timeline"
     });
   };
 };
