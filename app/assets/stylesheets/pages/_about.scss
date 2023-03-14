@@ -14,7 +14,7 @@
     /* background-color: #eee; */
     color: rgba(10, 175, 230, 1);
     cursor: pointer;
-    padding: 30px 20px;
+    padding: 20px 10px;
     width: 60%;
     border: none;
     outline: none;
@@ -28,4 +28,29 @@
  width: 50%;
  padding: auto;
 
+}
+
+.active,
+.faq-page:hover {
+    background-color: #f6f39e;
+}
+
+.faq-body {
+  padding: 0 10px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.faq-page:after {
+  content: '+';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 30px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2796";
+  /* Unicode character for "minus" sign (-) */
 }
