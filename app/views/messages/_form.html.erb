@@ -13,8 +13,9 @@
         <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
         <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
       </div>
+
       <div class="media-wrapper d-flex">
-        <%= f.input :letter, input_html: { class: "d-none" } %>
+        <%= f.input :letter, input_html: { class: "d-none", require: true } %>
         <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
         <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
         <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
@@ -23,6 +24,20 @@
       <%= f.submit "Create a Message", class: "btn-white"%>
     </div>
   <% end %>
-
-
 </div>
+
+<!--  <script type="text/javascript" charset="utf-8">-->
+<!--      const image_tag = document.getElementById("image_tag");-->
+<!--      image_tag.addEventListener("click", (e) => {-->
+<!--          openSelector(e);-->
+<!--      });-->
+
+<!--      function openSelector(event) {-->
+<!--          event.preventDefault();-->
+
+<!--          const input = document.getElementById("input");-->
+<!--          input.click();-->
+<!--      }-->
+<!--  </script>-->
+<!--</div>-->
+
