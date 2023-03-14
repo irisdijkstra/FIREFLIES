@@ -30,3 +30,14 @@
     <%= link_to "Create a firefly", new_message_path, class: "cta-white"%>
   </div>
 </div>
+
+
+<article id="timer"
+  data-date= <%=@first_to_come.date_recieve%>
+></article>
+
+  <div id="clock-box">
+    <p> Next firefly will reach you in</p>
+    <div id="clock">
+    </div>
+  </div>
