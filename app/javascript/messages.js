@@ -11,15 +11,19 @@ const addMail = () => {
 }
 
 function openSelector(event) {
-  // console.log(event.currentTarget)
-  let input = event.currentTarget
-  console.log(input.src)
-  // input.click();
+  let img = event.currentTarget
+  let targetId = img.id
+  let input = document.getElementById(`message_${targetId}`)
+  if (targetId !== "letter") {
+    input.click();
+  } else {
+    input.classList.remove("d-none")
+  }
+
 }
 
-const inputs = document.querySelectorAll(".input-image");
+const inputs = document.querySelectorAll(".form-img");
 inputs.forEach((input) => {
-  // console.log(input)
   input.addEventListener("click", openSelector)
 })
 

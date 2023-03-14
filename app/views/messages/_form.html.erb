@@ -8,16 +8,16 @@
 
     <div class="show-wrapper">
       <div class="media-wrapper d-flex justify-content-center">
-        <%=  image_tag("pencil.png", size: '50', id: "input-pencil").html_safe %>
-        <%=  image_tag("image.png", size: '50', id: "input-image").html_safe %>
-        <%=  image_tag("video.png", size: '50', id: "input-video").html_safe %>
-        <%=  image_tag("music.png", size: '50', id: "input-music").html_safe %>
+        <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
+        <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
+        <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
+        <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
       </div>
-      <div class="media-wrapper d-flex d-none">
-        <%= f.input :letter, label: { id: "form-pencil" } %>
-        <%= f.input :image, label: { id: "form-image" } %>
-        <%= f.input :video, label: { id: "form-vide" } %>
-        <%= f.input :audio, label: { id: "form-audio" } %>
+      <div class="media-wrapper d-flex">
+        <%= f.input :letter, input_html: { class: "d-none" } %>
+        <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
+        <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
+        <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
       </div>
 
       <%= f.submit "Create a Message", class: "btn-white"%>
