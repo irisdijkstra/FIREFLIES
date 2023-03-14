@@ -30,6 +30,26 @@ class MessagesController < ApplicationController
     redirect_to message_path(@message)
   end
 
+  def upload
+    if params[:file].content_type.start_with?("image")
+      result = Cloudinary::Uploader.upload(params[:file])
+      file_url = result["secure_url"]
+    elsif params[:file].content_type.start_with?("video")
+      result = Cloudinary::Uploader.upload_large(params[:file], resource_type: :video)
+      file_url = result["secure_url"]
+    else
+      render json: {error: "Unsupported file type"}, status: 400
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: {file_url: file_url} }
+    end
+  rescue => error
+    Rails.logger.error("Error uploading image to Cloudinary: #{error.message}")
+    render json: {error: "Unable to upload image"}, status: 500
+  end
+
   private
 
   def find_message
@@ -40,3 +60,5 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:image, :letter, :video, :audio, email_to: [])
   end
 end
+
+

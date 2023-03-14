@@ -1,5 +1,5 @@
 const addMail = () => {
-  const addMailsButton = document.querySelector(".add-mails-btn");
+  const addMailsButton = document.querySelector("#add-mails-btn");
   const addMailsContainer = document.querySelector(".add-mails");
   const mailTag = `<input type='text' name='emails[]' class='add-mails-input'>`;
 
@@ -8,7 +8,6 @@ const addMail = () => {
       addMailsContainer.insertAdjacentHTML("afterbegin", mailTag);
     });
   }
-
 }
 
 export { addMail }

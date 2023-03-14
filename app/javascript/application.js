@@ -9,6 +9,7 @@ import { dateToAll } from './date_to_all.js'
 import { navChange } from "./navbar.js";
 import { countdown } from "./countdown.js";
 import { faqBox } from "./about.js";
+import { cloudinary } from './cloudinary.js';
 
 document.addEventListener('turbo:load', () => {
   addMail()
@@ -16,5 +17,6 @@ document.addEventListener('turbo:load', () => {
   dateToAll()
   navChange()
   faqBox()
+  cloudinary()
   countdown()
 });
