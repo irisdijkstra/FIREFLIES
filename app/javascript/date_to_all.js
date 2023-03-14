@@ -34,6 +34,12 @@ const dateToAll = (event) => {
   if(sendBtn) {
     sendBtn.addEventListener("click", () => {
     // if clicked, all dates will be saved for fireflies
+      dateEach.forEach((date) => {
+      if (date.value == "") {
+        date.value = dateAll.value;
+      }
+    });
+
       formActions.forEach((form) => {
       // (field.action) => this is the URL to where the firefly will be patched
         fetch(form.action, {
