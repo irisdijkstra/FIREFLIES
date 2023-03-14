@@ -5,16 +5,16 @@
 .add-mails {
   margin: 10px;
   position: relative;
-  width: 746px;
+  width: 100%;
   height: 64px;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(200, 200, 200, 0.8);
   border-radius: 15px;
 
   .add-mails-input {
     position: relative;
-    width: 726px;
+    width: 100%;
     height: 44px;
     top: 10px;
     left: 11px;
@@ -27,8 +27,8 @@
 
 .show-wrapper{
   margin: 10px;
-  width: 746px;
-  height: 351px;
+  width: 100%;
+  // height: 351px;
   box-sizing: border-box;
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
@@ -62,4 +62,9 @@
 .img-btn{
   height: 50px;
   justify-content: space-between;
+}
+
+.btn-back-timeline {
+  display: flex;
+  justify-content: center;
 }

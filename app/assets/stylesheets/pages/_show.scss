@@ -100,7 +100,15 @@
 }
 
 .show-grid-img {
-  width: 100%;
+    width: 100%;
+
+  img {
+    width: 100%;
+    border-radius: 5%;
+  }
+}
+
+.img-width {
 
   img {
     width: 100%;

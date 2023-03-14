@@ -16,5 +16,5 @@ document.addEventListener('turbo:load', () => {
   dateToAll()
   navChange()
   cloudinary()
-  countdown()
+  // countdown()
 });

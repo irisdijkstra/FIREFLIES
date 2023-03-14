@@ -4,9 +4,45 @@
     <div class="add-mails" type="text" name="emails[]" class="btn-form-blue add-mails-input">
       <div class="btn-form-blue position-fixed" id="add-mails-btn">Add Email</div>
     </div>
-    <div id="media-preview"></div>
+
+    <div class="show-container-info-grid">
+      <div class="row row-1">
+        <div class="show-sender-container">
+          <strong><p>placeholder text for the receiver</p></strong>
+        </div>
+      </div>
+
+      <div class="row row-2">
+        <div class="col text-center">
+          <%# <div class="d-flex flex-column gap-4 txt-aud"> %>
+            <div class="show-grid-txt">
+             <%# WE SHOULD INSERT TEXT HERE WITH JS %>
+              <%# TEMP TEXT PLACEHOLDER %>
+              <p>lorem</p>
+              <%# <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugit reiciendis id ex, culpa rem voluptatum temporibus commodi nihil, sequi nam sint repellendus maiores officiis iste beatae, possimus impedit consequuntur?</p> %>
+            </div>
+            <div class="show-grid-aud">
+              <%# WE SHOULD INSERT AUDIO HERE WITH JS %>
+              <%# TEMP AUDIO PLACEHOLDER %>
+              <audio controls>
+                  <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+        <%# </div> %>
+
+        <div class="col-md-12 col-lg-6 img-vid img-width d-none">
+          <div class="show-grid-img" id="media-preview-img">
+            <%# HERE AN IMAGE WILL BE INSERTED %>
+          </div>
+          <div class="show-grid-vid" id="media-preview-vid">
+            <%# HERE A VID WILL BE INSERTED %>
+          </div>
+        </div>
+    </div>
+  </div>
+
     <div class="show-wrapper">
-      <!--      <div id="media-preview width: 650px height: 200px" ></div>-->
       <div class="media-wrapper d-flex justify-content-center">
         <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
         <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
@@ -14,30 +50,13 @@
         <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
       </div>
 
-      <div class="media-wrapper d-flex">
+      <div class="media-wrapper d-flex d-none">
         <%= f.input :letter, input_html: { class: "d-none", require: true } %>
         <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
         <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
         <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
       </div>
-
       <%= f.submit "Create a Message", class: "btn-white"%>
     </div>
   <% end %>
 </div>
-
-<!--  <script type="text/javascript" charset="utf-8">-->
-<!--      const image_tag = document.getElementById("image_tag");-->
-<!--      image_tag.addEventListener("click", (e) => {-->
-<!--          openSelector(e);-->
-<!--      });-->
-
-<!--      function openSelector(event) {-->
-<!--          event.preventDefault();-->
-
-<!--          const input = document.getElementById("input");-->
-<!--          input.click();-->
-<!--      }-->
-<!--  </script>-->
-<!--</div>-->
-
