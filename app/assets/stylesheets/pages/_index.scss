@@ -4,13 +4,13 @@
 
 @import "show";
 
-//body,
-//html {
-//  height: 100%;
-//  margin: 0;
-//  display: flex;
-//  flex-direction: column;
-//}
+body,
+html {
+ height: 100%;
+ margin: 0;
+ display: flex;
+ flex-direction: column;
+}
 
 
 .hover-links:link, .hover-links:visited, .hover-links:hover, .hover-links:active {
@@ -82,6 +82,7 @@ a {
   height: 15px;
   align-self: center;
   margin-top: -.55em;
+  margin-bottom: 200px;
   border-radius: 10px;
   animation: border-flicker 2s linear infinite;
   background: rgb(55,151,201);
@@ -102,7 +103,7 @@ a {
 
 .date-firefly {
   position: absolute;
-  top: 220px;
+  top:200px;
 }
 
 .little-thing:hover {
@@ -111,6 +112,40 @@ a {
 
 .little-thing-white:hover {
   animation: pulse-red 0.7s infinite;
+}
+
+#clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0px;
+}
+
+#clock-box {
+  font-family: 'Share Tech Mono';
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+  color:#daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#clock-box p {
+  font-size: 16px;
+  margin-bottom: 0px;
+  font-family: 'Share Tech Mono';
+  color:#daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+}
+
+#hour {
+  border:solid #daf6ff;
 }
 
 
