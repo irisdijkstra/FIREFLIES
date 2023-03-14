@@ -43,6 +43,15 @@ a {
   animation: pulse-red 2.5s infinite;
 }
 
+.little-thing-special {
+  background-color: #60f667;
+  box-shadow: 0 0 0 0 rgb(230, 232, 223);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: pulse-red 0.7s infinite;
+}
+
 .create-firefly-button {
   width: 100%;
   text-align: center;
@@ -117,12 +126,18 @@ a {
 }
 
 .little-thing:hover {
-  animation: pulse-red 0.7s infinite;
+  animation: pulse-red 0.6s infinite;
 }
 
 .little-thing-white:hover {
   animation: pulse-red 0.7s infinite;
 }
+
+.little-thing-special:hover {
+  animation: pulse-red 0.3s infinite;
+}
+
+
 
 #clock {
   display: flex;
