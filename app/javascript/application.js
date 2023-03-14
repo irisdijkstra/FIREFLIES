@@ -15,6 +15,6 @@ document.addEventListener('turbo:load', () => {
   fireHower()
   dateToAll()
   navChange()
-  // countdown()
   faqBox()
+  countdown()
 });
