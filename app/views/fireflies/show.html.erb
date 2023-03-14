@@ -1,71 +1,59 @@
 <div class="page-container">
   <div class="show-container-outside">
     <div class="show-container-inside">
-        <div class="show-container-info">
+        <div class="show-container-info-grid">
 
-            <div class="show-container-info-grid">
+          <div class="row row-1">
+            <div class="show-sender-container">
+              <% if @firefly.message.user == current_user %>
+                <p> Send to <strong> myself </strong></p>
+              <% else %>
+                <p><strong>Received from: </strong>
+                <%= @firefly.message.user.first_name %>
+                <%= @firefly.message.user.last_name %> --
+                <%= @firefly.message.user.email %> </p>
+              <% end %>
+              <p><strong> Sent: </strong> <%= @firefly.date_sent %></p>
+              <p><strong> Received: </strong> <%= @firefly.date_recieve %></p>
+            </div>
+          </div>
 
-              <div class="show-grid-row1 row">
-                <div class="show-grid-txt col-4">
+          <div class="row row-2">
+
+            <div class="col-md-12 col-lg-6">
+              <div class="d-flex flex-column gap-4 txt-aud">
+                <div class="show-grid-txt">
                   <% if @firefly.message.letter != "" %>
                       <%= @firefly.message.letter %>
                   <% end %>
                 </div>
-                <div class="show-grid-img col-8">
-                  <% if @firefly.message.image != nil %>
-                      <%= @firefly.message.image%>
-                  <% end %>
-                    <%# TEMP IMAGE PLACEHOLDER:%>
-                  <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+                <div class="show-grid-aud">
+                  <audio controls>
+                      <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                  </audio>
                 </div>
               </div>
-
-              <div class="show-grid-row2 row">
-                <div class="show-grid-aud col-4">
-                  <% if @firefly.message.audio != "" %>
-                    <br>
-                    <%= @firefly.message.audio %>
-                  <% end %>
-                    <%# TEMP AUDIO PLACEHOLDER %>
-                    <audio controls>
-                        <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
-                    </audio>
-                </div>
-                <div class="show-grid-vid col-8">
-                  <% if @firefly.message.video != nil %>
-                      <%= @firefly.message.video %>
-                  <% end %>
-                    <%# TEMP VIDEO PLACEHOLDER %>
-                    <%# <video width="320" height="240" controls>
-                        <source src="flowers-68367.mp4" type="video/mp4">
-                    </video> %>
-                    <img src="https://source.unsplash.com/random/320x239/?love" alt="">
-                </div>
-              </div>
-
             </div>
 
-      </div>
+              <div class="col-md-12 col-lg-6">
+                <div class="d-flex flex-column gap-4 img-vid">
+                  <div class="show-grid-img">
+                      <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+                  </div>
+                  <div class="show-grid-vid">
+                    <video controls>
+                        <source src="flowers-68367.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
 
-<div class="show-sender-container">
-  <% if @firefly.message.user == current_user %>
-    <p>This firefly is send to <strong> myself </strong></p> |
-  <% else %>
-    <p><strong>Received from: </strong> <br>
-    <%= @firefly.message.user.first_name %>
-    <%= @firefly.message.user.last_name %> --
-    <%= @firefly.message.user.email %> </p> |
-  <% end %>
-  <br>
-  <p><strong> Sent: </strong> <%= @firefly.date_sent %></p> |
-  <p><strong> Received: </strong> <%= @firefly.date_recieve %></p>
-  <br><br>
-</div>
-
 <div class="show-btn-container">
-  <%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
-  <%= link_to "My timeline", timeline_path %>
+  <div class="cta-white"><%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></div>
+  <div class="cta-white"><%= link_to "My timeline", timeline_path %></div>
 </div>
