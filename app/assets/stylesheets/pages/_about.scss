@@ -1,0 +1,31 @@
+.faq-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+  .hr-line{
+    width: 60%;
+    margin: auto;
+
+  }
+
+  .faq-page {
+    /* background-color: #eee; */
+    color: rgba(10, 175, 230, 1);
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+}
+
+.faq-body{
+  margin: auto;
+  /* text-align: center; */
+ width: 50%;
+ padding: auto;
+
+}
