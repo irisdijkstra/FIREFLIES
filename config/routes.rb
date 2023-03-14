@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # get "content_form", to: "pages#content", as: :content
   # get "destination_form", to: "pages#destination", as: :destination
 
+  post "upload", to: "messages#upload"
+
   resources :messages, only: %i[create edit new] do
     get "/date", to: "fireflies#date", as: :date
   end
@@ -16,4 +18,7 @@ Rails.application.routes.draw do
   get "/timeline", to: "pages#timeline", as: :timeline
 
   resources :fireflies, only: %i[show destroy update]
+
+
 end
+

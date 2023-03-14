@@ -1,12 +1,12 @@
 <div class="container-messages">
   <%= simple_form_for [@user, @message] do |f| %>
-    <%#= f.label :recipients %>
-    <div class="add-mails">
-      <input type="text" name="emails[]" class="add-mails-input">
-      <div class="btn-form-blue position-fixed">Add Email</div>
+    <%#= f.label :recipients, "Add Email" %>
+    <div class="add-mails" type="text" name="emails[]" class="btn-form-blue add-mails-input">
+      <div class="btn-form-blue position-fixed" id="add-mails-btn">Add Email</div>
     </div>
-
+    <div id="media-preview"></div>
     <div class="show-wrapper">
+      <!--      <div id="media-preview width: 650px height: 200px" ></div>-->
       <div class="media-wrapper d-flex justify-content-center">
         <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
         <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
@@ -24,5 +24,5 @@
     </div>
   <% end %>
 
-</div>
 
+</div>
