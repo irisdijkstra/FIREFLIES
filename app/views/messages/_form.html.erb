@@ -8,39 +8,21 @@
 
     <div class="show-wrapper">
       <div class="media-wrapper d-flex justify-content-center">
-        <div id="pencil" onclick="clickInput('image')"> <%=  image_tag("pencil.png", size: '50').html_safe %></div>
-        <%=  image_tag("image.png", size: '50').html_safe %>
-        <%=  image_tag("video.png", size: '50').html_safe %>
-        <%=  image_tag("music.png", size: '50').html_safe %>
+        <%=  image_tag("pencil.png", size: '50', id: "input-pencil").html_safe %>
+        <%=  image_tag("image.png", size: '50', id: "input-image").html_safe %>
+        <%=  image_tag("video.png", size: '50', id: "input-video").html_safe %>
+        <%=  image_tag("music.png", size: '50', id: "input-music").html_safe %>
       </div>
       <div class="media-wrapper d-flex d-none">
-        <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe %>
-        <%= f.input :image, input_html: { id: "image" }, as: :file, label: image_tag("image.png", size: '50').html_safe %>
-        <%= f.input :video, label: image_tag("video.png", size: '50').html_safe %>
-        <%= f.input :audio, class: "img-btn", label: image_tag("music.png", size: '50').html_safe %>
+        <%= f.input :letter, label: { id: "form-pencil" } %>
+        <%= f.input :image, label: { id: "form-image" } %>
+        <%= f.input :video, label: { id: "form-vide" } %>
+        <%= f.input :audio, label: { id: "form-audio" } %>
       </div>
 
       <%= f.submit "Create a Message", class: "btn-white"%>
     </div>
   <% end %>
 
-  <script type="text/javascript" charset="utf-8">
-      function clickInput(target) {
-          document.querySelector('#image').click();
-      }
-
-      // const pencil = document.getElementById("pencil");
-      // pencil.addEventListener("click", (e) => {
-      //     openSelector(e);
-      //     console.log("heyy")
-      // });
-
-      // function openSelector(event) {
-      //     event.preventDefault();
-      //
-      //     const input = document.getElementById("input");
-      //     input.click();
-      // }
-  </script>
 </div>
 

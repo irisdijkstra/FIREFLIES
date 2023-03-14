@@ -10,18 +10,22 @@ const addMail = () => {
   }
 }
 
-function openSelector(input) {
-  input.click();
+function openSelector(event) {
+  // console.log(event.currentTarget)
+  let input = event.currentTarget
+  console.log(input.src)
+  // input.click();
 }
+
+const inputs = document.querySelectorAll(".input-image");
+inputs.forEach((input) => {
+  // console.log(input)
+  input.addEventListener("click", openSelector)
+})
 
 const pencil = document.getElementById("pencil");
 const image = document.getElementById("message_image");
 const text = document.querySelector(".add-mails-input");
-// pencil.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   const input1 = document.querySelector(".input1");
-//   input1.click();
-// });
 
 function clickInput(target) {
   document.querySelector(`.${target}`).click();
