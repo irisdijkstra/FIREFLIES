@@ -21,13 +21,13 @@
           <div class="row row-2">
 
             <div class="col-md-12 col-lg-6">
-              <div class="d-flex flex-column gap-5 txt-aud">
+              <div class="d-flex flex-column gap-4 txt-aud">
                 <div class="show-grid-txt">
                   <% if @firefly.message.letter != "" %>
                       <%= @firefly.message.letter %>
                   <% end %>
                 </div>
-                <div class="show-grid-aud mb-5">
+                <div class="show-grid-aud">
                   <audio controls>
                       <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
                   </audio>
@@ -36,14 +36,14 @@
             </div>
 
               <div class="col-md-12 col-lg-6 aud-vid">
-                <div class="d-flex flex-column gap-5">
+                <div class="d-flex flex-column gap-4 img-vid">
+                  <div class="show-grid-img">
+                      <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+                  </div>
                   <div class="show-grid-vid">
                     <video controls>
                         <source src="flowers-68367.mp4" type="video/mp4">
                     </video>
-                    </div>
-                  <div class="show-grid-img">
-                    <img src="https://source.unsplash.com/random/320x240/?love" alt="">
                   </div>
                 </div>
               </div>
@@ -54,6 +54,6 @@
 </div>
 
 <div class="show-btn-container">
-  <div class="btn-white"><%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></div>
-  <div class="btn-white"><%= link_to "My timeline", timeline_path %></div>
+  <div class="cta-white"><%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></div>
+  <div class="cta-white"><%= link_to "My timeline", timeline_path %></div>
 </div>
