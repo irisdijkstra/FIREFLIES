@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   resources :fireflies, only: %i[show destroy update]
 
+  resources :fireflies do
+    resources :comments, only: %i[new create]
+  end
+
 
 end
-
