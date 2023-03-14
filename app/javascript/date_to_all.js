@@ -40,18 +40,18 @@ const dateToAll = (event) => {
       }
     });
 
-        formActions.forEach((form) => {
-        // (field.action) => this is the URL to where the firefly will be patched
-          fetch(form.action, {
-            method: "PATCH",
-            headers: {"Accept": "text/plain"},
-            body: new FormData(form)
-          })
-          // .then((response) => response.text())
-          // .then((data) => console.log(data))
-          // console.log(new FormData(field))
-        });
-        window.location.href = "http://localhost:3000/timeline"
+      formActions.forEach((form) => {
+      // (field.action) => this is the URL to where the firefly will be patched
+        fetch(form.action, {
+          method: "PATCH",
+          headers: {"Accept": "text/plain"},
+          body: new FormData(form)
+        })
+        // .then((response) => response.text())
+        // .then((data) => console.log(data))
+        // console.log(new FormData(field))
+      });
+      window.location.href = "http://localhost:3000/timeline"
     });
   };
 };
