@@ -14,7 +14,7 @@
         <%=  image_tag("music.png", size: '50').html_safe %>
       </div>
       <div class="media-wrapper d-flex d-none">
-        <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe %>
+        <%= f.input :letter, label: image_tag("pencil.png", size: '50').html_safe, input_html: { required: true } %>
         <%= f.input :image, as: :file, class: "img-btn", label: image_tag("image.png", size: '50').html_safe %>
         <%= f.input :video, class: "img-btn", label: image_tag("video.png", size: '50').html_safe %>
         <%= f.input :audio, class: "img-btn", label: image_tag("music.png", size: '50').html_safe %>
@@ -38,4 +38,3 @@
       }
   </script>
 </div>
-
