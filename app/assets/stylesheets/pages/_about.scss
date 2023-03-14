@@ -1,3 +1,25 @@
+#background {
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  background: linear-gradient(180deg, #05031D 72.92%, #003E68 100%);
+}
+
+.big-container {
+  position: relative;
+
+  z-index: 100;
+
+}
+
+.faq-heading{
+  border-bottom: #777;
+  padding: 20px 300px;
+}
+
 .faq-container{
   display: flex;
   justify-content: center;
