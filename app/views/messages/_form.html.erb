@@ -42,8 +42,9 @@
           </div>
       </div>
     </div>
-    <div class="d-flex">
-      <div class="media-wrapper">
+
+    <div class="page-container">
+      <div class="media-wrapper d-flex">
         <%=  image_tag("pencil.png", size: '50', class: "form-img d-none", id: "letter").html_safe %>
         <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
         <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
@@ -55,13 +56,15 @@
         <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
         <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
       </div>
-  </div>
 
-      <div class="show-wrapper">
+       <div class="show-wrapper">
         <div class="send-firefly">
           <%= f.submit "Fly out", class: "btn-form-blue"%>
         </div>
       </div>
+    </div>
+
+
     </div>
 </div>
 

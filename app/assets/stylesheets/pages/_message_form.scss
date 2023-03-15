@@ -60,6 +60,10 @@
   justify-content: flex-end;
 }
 
+.form-actions-wrapper{
+  flex-direction: flex-end;
+}
+
 .messages-cont {
   overflow: auto;
 }
