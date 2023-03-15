@@ -1,6 +1,8 @@
 const cloudinary = () => {
     const inputs = document.querySelectorAll(".form-img");
-    const mediaPreview = document.getElementById("media-preview");
+    // const mediaPreview = document.getElementById("media-preview");
+    const mediaPreviewImg = document.getElementById("media-preview-img");
+    const mediaPreviewVid = document.getElementById("media-preview-vid");
 
     const uploadMedia = (input) => {
         const file = input.files[0];
@@ -31,12 +33,15 @@ const cloudinary = () => {
                 if (isImage) {
                     const imageElement = document.createElement("img");
                     imageElement.src = fileUrl;
-                    mediaPreview.appendChild(imageElement);
+                    mediaPreviewImg.appendChild(imageElement);
+                    mediaPreviewImg.parentElement.classList.remove("d-none");
+                    //insertAdjacentElement("afterbegin"
                 } else {
                     const videoElement = document.createElement("video");
                     videoElement.src = fileUrl;
                     videoElement.controls = true;
-                    mediaPreview.appendChild(videoElement);
+                    mediaPreviewVid.appendChild(videoElement);
+                    mediaPreviewImg.parentElement.classList.remove("d-none");
                 }
             })
             .catch(error => {
