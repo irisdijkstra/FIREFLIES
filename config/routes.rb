@@ -13,13 +13,11 @@ Rails.application.routes.draw do
 
   resources :messages, only: %i[create edit new] do
     get "/date", to: "fireflies#date", as: :date
+    resources :comments, only: %i[new create]
   end
 
   get "/timeline", to: "pages#timeline", as: :timeline
   get "/about", to: "pages#about", as: :about
 
   resources :fireflies, only: %i[show destroy update]
-
-
 end
-
