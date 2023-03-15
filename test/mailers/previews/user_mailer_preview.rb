@@ -5,7 +5,8 @@ class UserMailerPreview < ActionMailer::Preview
   def welcome
     # receiver = "beribakdanko@gmail.com"
     email = params[:email]
-    UserMailer.with(email: email).welcome.deliver_now
+    # UserMailer.with(email: email).welcome.deliver_now
+    UserMailer.with(email: email).welcome.deliver_later
   end
 
 end
