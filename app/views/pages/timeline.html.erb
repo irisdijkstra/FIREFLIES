@@ -43,7 +43,11 @@
 
 
   <div id="clock-box">
+    <%if @first_to_come.present?%>
     <p> Next firefly will reach you in</p>
+    <% else %>
+    <p> You do not have any upcoming fireflies</p>
+    <% end %>
     <div id="clock">
     </div>
   </div>
