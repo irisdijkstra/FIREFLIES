@@ -11,14 +11,14 @@
   </head>
 
   <body>
-    <div id="background">
-      <%= render "shared/background" %>
+    <div id="background"> <%= render "shared/background" %> </div>
       <div class="content">
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
-        <%= yield %>
+        <div style="min-height: 80vh;">
+          <%= yield %>
+        </div>
         <%= render "shared/footer" %>
-      </div>
     </div>
   </body>
 </html>
