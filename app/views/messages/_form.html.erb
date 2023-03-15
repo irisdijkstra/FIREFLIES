@@ -1,43 +1,72 @@
-<div class="container-messages">
-  <%= simple_form_for [@user, @message] do |f| %>
-    <%#= f.label :recipients, "Add Email" %>
-    <div class="add-mails" type="text" name="emails[]" class="btn-form-blue add-mails-input">
-      <div class="btn-form-blue position-fixed" id="add-mails-btn">Add Email</div>
+<%= simple_form_for [@user, @message] do |f| %>
+  <div class="page-container">
+    <div class="show-container-outside">
+      <div class="show-container-inside">
+
+          <div class="show-container-info-grid">
+            <div class="row messages-cont">
+              <div class="col text-center">
+                <div class="txt">
+                  <%= f.input :letter, input_html: { require: true } %>
+                </div>
+                <div class="audio">
+                  <%# <audio controls>
+                    <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                  </audio> %>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-lg-6 img-vid img-width d-none">
+                <%# d-none %>
+                <div id="media-preview-img">
+                  <%# TEMP IMAGE PLACEHOLDER:%>
+                  <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
+                </div>
+                <div id="media-preview-vid">
+                </div>
+              </div>
+
+              <div class="row row-message">
+                  <div class="add-mails">
+                  <br>
+                  <%# REPLACE BR FOR MARGIN TOP %>
+                    <input type="text" name="emails[]" class="add-mails-input">
+                  </div>
+                  <div id="add-mails-btn">
+                      <p>+</p>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
     </div>
-    <div id="media-preview"></div>
-    <div class="show-wrapper">
-      <!--      <div id="media-preview width: 650px height: 200px" ></div>-->
-      <div class="media-wrapper d-flex justify-content-center">
-        <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
+
+    <div class="page-container">
+      <div class="media-wrapper d-flex">
+        <%=  image_tag("pencil.png", size: '50', class: "form-img d-none", id: "letter").html_safe %>
         <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
         <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
         <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
       </div>
 
-      <div class="media-wrapper d-flex">
-        <%= f.input :letter, input_html: { class: "d-none", require: true } %>
+      <div class="media-wrapper d-flex d-none">
         <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
         <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
         <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
       </div>
 
-      <%= f.submit "Create a Message", class: "btn-white"%>
+       <div class="show-wrapper">
+        <div class="send-firefly">
+          <%= f.submit "Fly out", class: "btn-form-blue"%>
+        </div>
+      </div>
     </div>
-  <% end %>
+
+
+    </div>
 </div>
 
-<!--  <script type="text/javascript" charset="utf-8">-->
-<!--      const image_tag = document.getElementById("image_tag");-->
-<!--      image_tag.addEventListener("click", (e) => {-->
-<!--          openSelector(e);-->
-<!--      });-->
-
-<!--      function openSelector(event) {-->
-<!--          event.preventDefault();-->
-
-<!--          const input = document.getElementById("input");-->
-<!--          input.click();-->
-<!--      }-->
-<!--  </script>-->
-<!--</div>-->
-
+  </div>
+<% end %>
