@@ -66,6 +66,22 @@
   </div>
 </div>
 
+<div style="width: 960px; margin: 0 auto;">
+
+<h2>Connect with your peers:</h2>
+<%= simple_form_for [@firefly, @comment] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit"%>
+ <% end %>
+
+<h2>What was said:</h2>
+<% @firefly.message.comments.each do |comment| %>
+ <p><%= comment.content %></p>
+<% end %>
+<h2>End</h2>
+</div>
+
+
 <div class="show-btn-container">
   <div class="cta-white"><%= link_to "Remove firefly", firefly_path(@firefly), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></div>
   <div class="cta-white"><%= link_to "My timeline", timeline_path %></div>
