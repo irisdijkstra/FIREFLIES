@@ -35,9 +35,12 @@
 </div>
 
 
-<article id="timer"
-  data-date= <%=@first_to_come.date_recieve%>
-></article>
+
+  <%if @first_to_come.present?%>
+  <article id="timer" data-date="<%=@first_to_come.date_recieve%>">
+  </article>
+  <% end %>
+
 
   <div id="clock-box">
     <p> Next firefly will reach you in</p>
