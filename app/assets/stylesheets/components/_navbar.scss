@@ -7,7 +7,7 @@
   color: white;
   position: relative;
   top: 0;
-  width: 1040px;
+  width: 1240px;
   padding-top: 16px;
   transition: 0.3s ease-in-out;
   z-index: 100;
@@ -27,9 +27,11 @@
 }
 
 .header-container {
-  width: 1040px;
+  width: 1240px;
   margin: 0 auto;
   position: center;
+  display: flex;
+  justify-content: center;
 }
 
 .dropdown {
