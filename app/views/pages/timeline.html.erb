@@ -1,4 +1,3 @@
-<%# <div style="height: 500px;"> %>
 <div class="all">
   <div class="all-fireflies-inline">
     <% @fireflies.each do |firefly| %>
@@ -9,9 +8,13 @@
               <%= firefly.date_recieve.strftime('%d %b %Y') %>
             </div>
 
-            <% if firefly.date_recieve <= Date.today %>
+            <% if firefly.date_recieve < Date.today %>
               <%= link_to firefly_path(firefly) do %>
                 <div class="little-thing"></div>
+              <% end %>
+              <% elsif firefly.date_recieve == Date.today %>
+              <%= link_to firefly_path(firefly) do %>
+                <div class="little-thing-special"></div>
               <% end %>
             <% else %>
                 <div class="little-thing-white"></div>
@@ -32,12 +35,19 @@
 </div>
 
 
-<article id="timer"
-  data-date= <%=@first_to_come.date_recieve%>
-></article>
+
+  <%if @first_to_come.present?%>
+  <article id="timer" data-date="<%=@first_to_come.date_recieve%>">
+  </article>
+  <% end %>
+
 
   <div id="clock-box">
+    <%if @first_to_come.present?%>
     <p> Next firefly will reach you in</p>
+    <% else %>
+    <p> You do not have any upcoming fireflies</p>
+    <% end %>
     <div id="clock">
     </div>
   </div>
