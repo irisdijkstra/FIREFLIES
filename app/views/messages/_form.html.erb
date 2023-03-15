@@ -1,69 +1,69 @@
 <%= simple_form_for [@user, @message] do |f| %>
   <div class="page-container">
-      <div class="show-container-outside">
-        <div class="show-container-inside">
+    <div class="show-container-outside">
+      <div class="show-container-inside">
 
           <div class="show-container-info-grid">
-
-            <div class="row row-2">
-              <div class="col-11">
-
-                <div class="row row-2">
-                  <div class="col text-center">
-                    <div class="txt">
-                      test
-                    </div>
-                    <div class="audio">
-                      <audio controls>
-                        <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
-                      </audio>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-lg-6 img-vid img-width">
-                    <%# d-none %>
-                    <div id="media-preview-img">
-                      <%# TEMP IMAGE PLACEHOLDER:%>
-                      <img src="https://source.unsplash.com/random/320x240/?love" alt="">
-                    </div>
-                    <div id="media-preview-vid">
-                    </div>
-                  </div>
+            <div class="row messages-cont">
+              <div class="col text-center">
+                <div class="txt">
+                  <%= f.input :letter, input_html: { require: true } %>
                 </div>
-                <div class="add-mails" type="text" name="emails[]" class="add-mails-input">
-                  <div id="add-mails-btn"> + </div>
+                <div class="audio">
+                  <%# <audio controls>
+                    <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                  </audio> %>
                 </div>
+              </div>
+
+              <div class="col-sm-12 col-lg-6 img-vid img-width d-none">
+                <%# d-none %>
+                <div id="media-preview-img">
+                  <%# TEMP IMAGE PLACEHOLDER:%>
+                  <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
+                </div>
+                <div id="media-preview-vid">
+                </div>
+              </div>
+
+              <div class="row row-message">
+                  <div class="add-mails">
+                  <br>
+                  <%# REPLACE BR FOR MARGIN TOP %>
+                    <input type="text" name="emails[]" class="add-mails-input">
+                  </div>
+                  <div id="add-mails-btn">
+                      <p>+</p>
+                    </div>
+                </div>
+              </div>
+
             </div>
-
-              <div class="col-1">
-                  <div class="media-wrapper">
-                    <%=  image_tag("pencil.png", size: '50', class: "form-img d-none", id: "letter").html_safe %>
-                    <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
-                    <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
-                    <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
-                  </div>
-
-                  <div class="media-wrapper d-flex d-none">
-                    <%= f.input :letter, input_html: { class: "d-none", require: true } %>
-                    <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
-                    <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
-                    <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
-                  </div>
-                </div>
-              </div>
-
-            <%# <div class="show-container-info-grid"> %>
-
           </div>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="media-wrapper">
+        <%=  image_tag("pencil.png", size: '50', class: "form-img d-none", id: "letter").html_safe %>
+        <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
+        <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
+        <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
+      </div>
 
-              <div class="show-wrapper">
-                <div class="send-firefly">
-                  <%= f.submit "Fly out", class: "btn-form-blue"%>
-                </div>
-              </div>
-          </div>
+      <div class="media-wrapper d-flex d-none">
+        <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
+        <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
+        <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
+      </div>
+  </div>
+
+      <div class="show-wrapper">
+        <div class="send-firefly">
+          <%= f.submit "Fly out", class: "btn-form-blue"%>
         </div>
       </div>
     </div>
-    <%#= f.label :recipients, "Add Email" %>
+</div>
+
+  </div>
 <% end %>

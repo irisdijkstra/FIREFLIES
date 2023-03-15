@@ -18,5 +18,5 @@ document.addEventListener('turbo:load', () => {
   navChange()
   faqBox()
   cloudinary()
-  // countdown()
+  countdown()
 });
