@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about", as: :about
 
   resources :fireflies, only: %i[show destroy update]
+
 end
