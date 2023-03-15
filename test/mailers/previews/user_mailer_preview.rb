@@ -3,8 +3,9 @@ class UserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/welcome
   def welcome
-    user = User.first
-    UserMailer.with(user: user).welcome
+    # receiver = "beribakdanko@gmail.com"
+    email = params[:email]
+    UserMailer.with(email: email).welcome.deliver_now
   end
 
 end
