@@ -50,10 +50,29 @@
 }
 
 .media-wrapper{
-  margin-top: 30px;
+  // margin-top: 30px;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 15px;;
+  // border-radius: 15px;
+}
+
+#add-mails-btn {
+  align-items: center;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  background: #003152;
+  padding: 9px;
+  border-radius: 15px;
+  // border-radius: 50px 0px 0px 50px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 //.media-wrapper input {
