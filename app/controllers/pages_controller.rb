@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @first_to_come = @fireflies.find_by("date_recieve > ?", Date.today)
     @new_message = @fireflies.where(date_recieve: Date.today)
     if @new_message.present?
-      flash[:notice] = "You have a new firefly."
+      flash[:notice] = "You have #{@new_message.count} new firefly."
     end
   end
 
