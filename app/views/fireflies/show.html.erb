@@ -66,20 +66,31 @@
   </div>
 </div>
 
-<div style="width: 960px; margin: 0 auto;">
+<div class="page-container-comment">
+  <div class="show-container-outside-comment">
+    <div class="show-container-inside-comment">
+      <div class="show-container-info-grid-comment">
 
-<h2>Connect with your peers:</h2>
-<%= simple_form_for [@firefly, @comment] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit"%>
- <% end %>
-
-<h2>What was said:</h2>
-<% @firefly.message.comments.each do |comment| %>
- <p><%= comment.content %></p>
-<% end %>
-<h2>End</h2>
+      <% if current_user %>
+        <h4>Connect with your friends and send them a message:</h4>
+        <%= simple_form_for [@message, @comment] do |f| %>
+          <%= f.input :content, label_html: { class: 'd-none' } %>
+          <%= hidden_field_tag 'firefly_id', @firefly.id %>
+          <%= f.submit "Submit", class: "btn-white" %>
+        <% end %>
+        <br>
+        <div class="comments-read">
+        <h4>What was said:</h4>
+        <% @firefly.message.comments.each do |comment| %>
+        <p><i class="fa-regular fa-user"></i> <%= User.find_by(email: @firefly.email_recipient).first_name %>:
+        <%= comment.content %></p>
+      <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<% end %>
 
 
 <div class="show-btn-container">

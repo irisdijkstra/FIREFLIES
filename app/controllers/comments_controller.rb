@@ -1,10 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment
-  before_action :find_fly
-
-  def index
-    @comments = Comment.all
-  end
+  before_action :find_message
 
   def show
   end
@@ -14,9 +9,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @firefly.comment = @comment
+    @comment.message = @message
     if @comment.save!
-      # redirect_to firefly_path(@comment)
+      redirect_to firefly_path(params[:firefly_id])
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,18 +21,10 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :message_id)
+    params.require(:comment).permit(:content)
   end
 
-  def find_fly
-    @firefly = Firefly.find(params[:firefly_id])
+  def find_message
+    @message = Message.find(params[:message_id])
   end
-
-  def set_comment
-    @comment = Comment.find(params[:id])
-  end
-
-  # def find_message
-  #   @message = Message.find(params[:message_id])
-  # end
 end

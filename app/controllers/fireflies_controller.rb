@@ -4,6 +4,7 @@ class FirefliesController < ApplicationController
 
   def show
     @comment = Comment.new
+    @message = @firefly.message
   end
 
   def date
