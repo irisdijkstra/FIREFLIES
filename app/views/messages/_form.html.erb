@@ -1,53 +1,59 @@
 <div class="page-container">
-  <div class="show-container-info-grid">
-    <%= simple_form_for [@user, @message] do |f| %>
-      <%#= f.label :recipients, "Add Email" %>
-      <div class="add-mails" type="text" name="emails[]" class="btn-form-blue add-mails-input">
-        <div class="btn-form-blue position-fixed" id="add-mails-btn">Add Email</div>
-      </div>
-  <%# </div> %>
+  <div class="show-container-outside">
+    <div class="show-container-inside">
 
-    <%# <div class="show-container-info-grid"> %>
-      <div class="row">
-        <div class="col text-center">
-          <div class="txt">
-            test
+      <div class="show-container-info-grid">
+        <%= simple_form_for [@user, @message] do |f| %>
+          <%#= f.label :recipients, "Add Email" %>
+          <div class="add-mails" type="text" name="emails[]" class="btn-form-blue add-mails-input">
+            <div class="btn-form-blue position-fixed" id="add-mails-btn">Add Email</div>
           </div>
-          <div class="audio">
-            <audio controls>
-              <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
-            </audio>
+      <%# </div> %>
+
+        <%# <div class="show-container-info-grid"> %>
+          <div class="row">
+            <div class="col text-center">
+              <div class="txt">
+                test
+              </div>
+              <div class="audio">
+                <audio controls>
+                  <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                </audio>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-6 img-vid img-width">
+              <%# d-none %>
+              <div id="media-preview-img">
+                <%# TEMP IMAGE PLACEHOLDER:%>
+                <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+              </div>
+              <div id="media-preview-vid">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-sm-12 col-lg-6 img-vid img-width">
-          <%# d-none %>
-          <div id="media-preview-img">
-            <%# TEMP IMAGE PLACEHOLDER:%>
-            <img src="https://source.unsplash.com/random/320x240/?love" alt="">
+          <div class="show-wrapper">
+            <div class="media-wrapper d-flex">
+              <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
+              <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
+              <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
+              <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
+            </div>
+
+            <div class="media-wrapper d-flex d-none">
+              <%= f.input :letter, input_html: { class: "d-none", require: true } %>
+              <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
+              <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
+              <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
+            </div>
+            <%= f.submit "Create a Message", class: "btn-white"%>
           </div>
-          <div id="media-preview-vid">
-          </div>
-        </div>
+        <% end %>
       </div>
+
     </div>
-
-      <div class="show-wrapper">
-        <div class="media-wrapper d-flex">
-          <%=  image_tag("pencil.png", size: '50', class: "form-img", id: "letter").html_safe %>
-          <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
-          <%=  image_tag("video.png", size: '50', class: "form-img", id: "video").html_safe %>
-          <%=  image_tag("music.png", size: '50', class: "form-img", id: "audio").html_safe %>
-        </div>
-
-        <div class="media-wrapper d-flex d-none">
-          <%= f.input :letter, input_html: { class: "d-none", require: true } %>
-          <%= f.input :image, as: :file, input_html: { class: "d-none" }%>
-          <%= f.input :video, as: :file, input_html: { class: "d-none" } %>
-          <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
-        </div>
-        <%= f.submit "Create a Message", class: "btn-white"%>
-      </div>
-    <% end %>
   </div>
 </div>
