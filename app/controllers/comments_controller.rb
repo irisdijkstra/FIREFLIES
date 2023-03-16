@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.message = @message
+    
     if @comment.save!
       redirect_to firefly_path(params[:firefly_id])
     else

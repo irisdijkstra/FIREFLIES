@@ -76,17 +76,18 @@
       <% if current_user %>
         <h4>Connect with your friends and send them a message:</h4>
         <%= simple_form_for [@message, @comment] do |f| %>
-          <%= f.input :content, label_html: { class: 'd-none' }, input_html: {class: 'rounded-4'} %>
+          <%= f.input :content, label_html: { class: 'd-none' }, input_html: {id: 'comment_letter', class: 'rounded-8px', placeholder: 'Type here...'}  %>
           <%= hidden_field_tag 'firefly_id', @firefly.id %>
-          <%= f.submit "Submit", class: "cta-yellow-comment" %>
+          <%= f.submit "SUBMIT", class: "cta-yellow-comment" %>
         <% end %>
         <br>
         <div class="comments-read">
         <h4>What was said:</h4>
+
         <% @firefly.message.comments.each do |comment| %>
-        <button class='chat-background'><i class="fa-regular fa-user"></i> <h1><%= User.find_by(email: @firefly.email_recipient).first_name %></h1>:
-        <%= comment.content %></button>
-      <% end %>
+          <button class='chat-background'><i class="fa-regular fa-user"></i> <h1><%= User.find_by(email: @firefly.email_recipient).first_name %></h1>:
+          <%= comment.content %></button>
+        <% end %>
         </div>
       </div>
     </div>
