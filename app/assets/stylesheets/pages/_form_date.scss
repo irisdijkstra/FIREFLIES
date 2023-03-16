@@ -19,10 +19,17 @@
   align-items: center;
   justify-content: center;
 
-  h2, .firefly-date-recieve-all {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  .firefly-date-recieve-all {
     margin-bottom: 32px;
     border-radius: 5px;
+    color: #05031D;
+    background: rgba(255, 255, 255, 0.808);
   }
+
 };
 
 #send-btn {
@@ -38,8 +45,4 @@
 
 #form-each {
   margin-top: 32px;
-}
-
-#firefly-date-recieve-all .form-select .date .optional {
-  width: 100%;
 }

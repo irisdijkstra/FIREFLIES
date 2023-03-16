@@ -13,8 +13,8 @@
                 <%= @firefly.message.user.last_name %> --
                 <%= @firefly.message.user.email %> </p>
               <% end %>
-              <p><strong> Sent: </strong> <%= @firefly.date_sent %></p>
-              <p><strong> Received: </strong> <%= @firefly.date_recieve %></p>
+              <p><strong> Sent: </strong> <%= @firefly.date_sent.strftime('%d %b %Y') %></p>
+              <p><strong> Received: </strong> <%= @firefly.date_recieve.strftime('%d %b %Y') %></p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@
               <div class="col-md-12 col-lg-6">
                 <div class="d-lg-flex flex-lg-column gap-4 img-vid">
                   <div class="show-grid-img">
-                      <% if @firefly.message.image != nil %>  
+                      <% if @firefly.message.image != nil %>
                           <% @firefly.message.image %>
                       <% end %>
                       <%# TEMP IMAGE PLACEHOLDER:%>
