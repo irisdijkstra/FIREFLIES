@@ -15,7 +15,7 @@ class FirefliesController < ApplicationController
   def update
     @firefly = Firefly.find(params[:id])
     @firefly.update(firefly_params)
-    UserMailer.with(email: @firefly.email_recipient).welcome.deliver_now
+    UserMailer.with(email: @firefly.email_recipient, firefly: @firefly).welcome.deliver_now
     respond_to do |format|
       format.html { redirect_to root_path } # if HTML requested, redirect to index
       format.text { render partial: "fireflies/form", locals: { firefly: @firefly }, formats: [:html] }

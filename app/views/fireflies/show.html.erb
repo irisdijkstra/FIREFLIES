@@ -10,7 +10,7 @@
               <% else %>
                 <p><strong>Received from: </strong>
                 <%= @firefly.message.user.first_name %>
-                <%= @firefly.message.user.last_name %> --
+                <%= @firefly.message.user.last_name %> -
                 <%= @firefly.message.user.email %> </p>
               <% end %>
               <p><strong> Sent: </strong> <%= @firefly.date_sent.strftime('%d %b %Y') %></p>
