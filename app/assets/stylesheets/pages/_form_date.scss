@@ -1,3 +1,10 @@
+.date-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
 .send-form-btns-date-container {
   padding: 64px;
   display: flex;
@@ -14,12 +21,14 @@
 
   h2, .firefly-date-recieve-all {
     margin-bottom: 32px;
+    border-radius: 5px;
   }
 };
 
 #send-btn {
   margin-top: 32px;
   margin-bottom: 16px;
+  animation: glow-yellow 3.0s infinite;
 }
 
 .btns-container-date-flex {
@@ -29,4 +38,8 @@
 
 #form-each {
   margin-top: 32px;
+}
+
+#firefly-date-recieve-all .form-select .date .optional {
+  width: 100%;
 }
