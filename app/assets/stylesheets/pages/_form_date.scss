@@ -1,3 +1,10 @@
+.date-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
 .send-form-btns-date-container {
   padding: 64px;
   display: flex;
@@ -12,14 +19,38 @@
   align-items: center;
   justify-content: center;
 
-  h2, .firefly-date-recieve-all {
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
     margin-bottom: 32px;
   }
+
+  .firefly-date-recieve-all {
+    margin-bottom: 32px;
+    border-radius: 5px;
+    color: #05031D;
+    background: rgba(255, 255, 255, 0.808);
+  }
+
 };
 
 #send-btn {
   margin-top: 32px;
   margin-bottom: 16px;
+  animation: glow-yellow 3.0s infinite;
+  font-weight: bold;
+  width: 220px;
+}
+
+#apply-all-btn{
+  width: 220px;
+  margin-right: 18px;
+}
+
+#costumize-btn{
+  width: 220px;
 }
 
 .btns-container-date-flex {
