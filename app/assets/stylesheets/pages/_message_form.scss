@@ -108,6 +108,15 @@
 .all-btns-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 14px;
+  margin-left: 40px;
+  img {
+    margin-right: 18px;
+  }
+}
+
+.send-firefly{
+  margin-top: -5px;
 }
 
 //.media-wrapper input {
