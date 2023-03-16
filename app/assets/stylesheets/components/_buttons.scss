@@ -27,7 +27,10 @@
   color: #09578C;
   text-decoration: none;
   padding: 8px 42px;
+}
 
+.glow {
+  animation: glow-yellow 3.0s infinite;
 }
 
 .button-blue{

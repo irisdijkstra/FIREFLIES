@@ -20,6 +20,10 @@
   justify-content: center;
 
   h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
     margin-bottom: 32px;
   }
 
@@ -37,6 +41,16 @@
   margin-bottom: 16px;
   animation: glow-yellow 3.0s infinite;
   font-weight: bold;
+  width: 220px;
+}
+
+#apply-all-btn{
+  width: 220px;
+  margin-right: 18px;
+}
+
+#costumize-btn{
+  width: 220px;
 }
 
 .btns-container-date-flex {
