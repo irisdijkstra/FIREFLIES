@@ -42,18 +42,26 @@
               <div class="col-md-12 col-lg-6">
                 <div class="d-lg-flex flex-lg-column gap-4 img-vid">
                   <div class="show-grid-img">
-                      <% if @firefly.message.image != nil %>
-                          <% @firefly.message.image %>
-                      <% end %>
+                    <% if @firefly.message.image.attached?%>
+                    <%= cl_image_tag @firefly.message.image.key, crop: :fill%>
+                 <% end %>
                       <%# TEMP IMAGE PLACEHOLDER:%>
                       <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
                     </div>
                   <div class="show-grid-vid">
-                    <div id="media-preview-vid">
-                    </div>
-                    <% if @firefly.message.video != nil %>
-                        <%= @firefly.message.video %>
-                    <% end %>
+                    <%# <% if @firefly.message.video != nil %>
+                        <%# <%= @firefly.message.video %>
+                    <%# <% end %>
+
+                     <% if @firefly.message.video%>
+                      <%# <%= cl_video_tag @firefly.message.video, crop: :fill %>
+                      <%= cl_video_tag(@firefly.message.video.key,
+                        :loop => true, :controls => true,
+                        :transformation => [
+                         :crop=>"fill",
+                          :quality=>70, :duration=>"10"],
+                        :fallback_content => "Your browser does not support HTML5 video tags." ) %>
+                     <% end %>
                     <%# TEMP VIDEO PLACEHOLDER %>
                     <%# <video controls> %>
                         <%# <source src="flowers-68367.mp4" type="video/mp4"> %>
