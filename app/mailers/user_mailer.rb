@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
   def welcome
-      @email = params[:email]
+    @firefly = params[:firefly]
+    @email = params[:email]
       mail(to: @email, subject: '✨ Welcome to Fireflies ✨')
   end
 end
