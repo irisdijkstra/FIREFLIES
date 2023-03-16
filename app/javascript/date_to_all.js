@@ -52,6 +52,8 @@ const dateToAll = (event) => {
         // console.log(new FormData(field))
       });
       window.location.href = "http://www.fireflies.buzz/timeline"
+      // "http://www.fireflies.buzz/timeline"
+      // "http://www.localhost3000/timeline"
     });
   };
 };

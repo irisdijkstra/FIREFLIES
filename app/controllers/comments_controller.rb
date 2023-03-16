@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.message = @message
+    @comment.user = current_user
     if @comment.save!
       redirect_to firefly_path(params[:firefly_id])
     else
@@ -27,4 +28,5 @@ class CommentsController < ApplicationController
   def find_message
     @message = Message.find(params[:message_id])
   end
+
 end
