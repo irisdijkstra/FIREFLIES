@@ -42,9 +42,9 @@
               <div class="col-md-12 col-lg-6">
                 <div class="d-lg-flex flex-lg-column gap-4 img-vid">
                   <div class="show-grid-img">
-                    <% if @firefly.message.image.attached?%>
-                      <%= cl_image_tag @firefly.message.image.key, crop: :fill%>
-                    <% end %>
+                      <% if @firefly.message.image.attached?%>
+                        <%= cl_image_tag @firefly.message.image.key, crop: :fill%>
+                      <% end %>
                       <%# TEMP IMAGE PLACEHOLDER:%>
                       <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
                     </div>
