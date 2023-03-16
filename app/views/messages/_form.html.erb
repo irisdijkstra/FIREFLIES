@@ -8,7 +8,7 @@
             <div class="col text-center">
               <div class="txt">
                 <%# <%= f.input :letter, input_html: { require: true } %>
-                <textarea class="form-control text optional" require="true" name="message[letter]" id="message_letter" placeholder="Type your message for the future here..."></textarea>
+                <textarea class="form-control text optional" require="true" name="message[letter]" id="message_letter" placeholder="Type your message to the future here..."></textarea>
               </div>
               <div class="audio">
                 <%# <audio controls>
@@ -29,10 +29,10 @@
 
             <div class="row row-message">
                 <div class="add-mails">
-                  <div class="mails-original d-flex">
-                    <input type="text" name="emails[]" class="add-mails-input" placeholder="TO (e-mail):">
-                    <input type="text" name="emails[]" class="add-mails-input" placeholder="TO (e-mail):">
-                  </div>
+                  <%# <div class="mails-original d-flex"> %>
+                    <input type="text" name="emails[]" class="add-mails-input" placeholder="@">
+                    <input type="text" name="emails[]" class="add-mails-input" placeholder="@">
+                  <%# </div> %>
                   <%# new mails will be added here %>
                 </div>
                 </div>
