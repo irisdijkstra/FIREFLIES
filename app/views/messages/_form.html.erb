@@ -1,49 +1,49 @@
-<%= simple_form_for [@user, @message] do |f| %>
-  <div class="page-container">
+<div class="page-container">
+  <%= simple_form_for [@user, @message] do |f| %>
     <div class="show-container-outside">
       <div class="show-container-inside">
 
-          <div class="show-container-info-grid">
-            <div class="row messages-cont">
-              <div class="col text-center">
-                <div class="txt">
-                  <%= f.input :letter, input_html: { require: true } %>
-                </div>
-                <div class="audio">
-                  <%# <audio controls>
-                    <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
-                  </audio> %>
-                </div>
+        <div class="show-container-info-grid">
+          <div class="row messages-cont">
+            <div class="col text-center">
+              <div class="txt">
+                <%# <%= f.input :letter, input_html: { require: true } %>
+                <textarea class="form-control text optional" require="true" name="message[letter]" id="message_letter" placeholder="Type your message to the future here..."></textarea>
               </div>
-
-              <div class="col-sm-12 col-lg-6 img-vid img-width d-none">
-                <%# d-none %>
-                <div id="media-preview-img">
-                  <%# TEMP IMAGE PLACEHOLDER:%>
-                  <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
-                </div>
-                <div id="media-preview-vid">
-                </div>
+              <div class="audio">
+                <%# <audio controls>
+                  <source src="https://pixabay.com/music/acoustic-group-love-bgm-no-copyright-music-113843/" type="audio/mp3">
+                </audio> %>
               </div>
+            </div>
 
-              <div class="row row-message">
-                  <div class="add-mails">
-                  <br>
-                  <%# REPLACE BR FOR MARGIN TOP %>
-                    <input type="text" name="emails[]" class="add-mails-input">
-                  </div>
+            <div class="col-sm-12 col-lg-6 img-vid img-width d-none">
+              <%# d-none %>
+              <div id="media-preview-img">
+                <%# TEMP IMAGE PLACEHOLDER:%>
+                <%# <img src="https://source.unsplash.com/random/320x240/?love" alt=""> %>
+              </div>
+              <div id="media-preview-vid">
+              </div>
+            </div>
+
+            <div class="row row-message">
+                <div class="add-mails">
+                  <%# <div class="mails-original d-flex"> %>
+                    <input type="text" name="emails[]" class="add-mails-input" placeholder="@">
+                    <input type="text" name="emails[]" class="add-mails-input" placeholder="@">
+                  <%# </div> %>
+                  <%# new mails will be added here %>
+                </div>
+                </div>
                   <div id="add-mails-btn">
-                      <p>+</p>
-                    </div>
-                </div>
-              </div>
-
+                    <p>+</p>
+                  </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
-
-    <div class="page-container">
+      <div class="all-btns-container">
       <div class="media-wrapper d-flex">
         <%=  image_tag("pencil.png", size: '50', class: "form-img d-none", id: "letter").html_safe %>
         <%=  image_tag("image.png", size: '50', class: "form-img", id: "image").html_safe %>
@@ -57,16 +57,13 @@
         <%= f.input :audio, as: :file, input_html: { class: "d-none" } %>
       </div>
 
-       <div class="show-wrapper">
+      <div class="show-wrapper">
         <div class="send-firefly">
           <%= f.submit "Fly out", class: "btn-form-blue"%>
         </div>
       </div>
     </div>
-
-
     </div>
-</div>
 
-  </div>
-<% end %>
+  <% end %>
+</div>
