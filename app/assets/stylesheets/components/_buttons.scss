@@ -22,10 +22,12 @@
   box-shadow: 2px 2px 10px rgba(248, 224, 8, 0.5);
   border-radius: 39px;
   font-size: 18px;
+  font-weight: bold;
   text-align: center;
   color: #09578C;
   text-decoration: none;
   padding: 8px 42px;
+
 }
 
 .button-blue{
@@ -46,7 +48,9 @@
   border-radius: 55px;
   text-align: center;
   font-style: bold;
-  font-weight: 700;
+  // font-weight: 700;
+  font-weight: bold;
+
   font-size: 18px;
   line-height: 25px;
   align-items: center;
