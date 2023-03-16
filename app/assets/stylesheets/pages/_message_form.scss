@@ -6,8 +6,12 @@
   // position: relative;
   width: 100%;
   height: fit-content;
-  // // top: 10px;
-  // // left: 11px;
+
+  display: grid;
+  gap: 0px 20px;
+  grid-template-columns: 1fr 1fr;
+  // top: 10px;
+  // left: 11px;
   // border-radius: 15px;
   // box-sizing: border-box;
   // background: rgba(255, 255, 255, 0.5);
@@ -16,9 +20,15 @@
   .add-mails-input {
     width: 100%;
     height: 44px;
-    margin-bottom: 10px;
+
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    padding-left: 30px;
     // box-sizing: border-box;
     // background: rgba(255, 255, 255, 0.8);
+    color: white;
     background: #040218da;
     border: 1px solid rgba(200, 200, 200, 0.8);
     border-radius: 15px;
@@ -47,17 +57,24 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
+#message_letter {
+  background: transparent;
+  height: 200px;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+}
+
 .media-wrapper{
-  // margin-top: 30px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  // border-radius: 15px;
+  margin-top: 15px;
 }
 
 .row-message {
   overflow: auto;
-  flex-direction: column;
-  justify-content: flex-end;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // flex-direction: column;
+  // justify-content: flex-end;
 }
 
 .form-actions-wrapper{
@@ -85,6 +102,11 @@
 
   // border-radius: 50%;
   // border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.all-btns-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 //.media-wrapper input {
