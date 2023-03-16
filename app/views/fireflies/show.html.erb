@@ -53,7 +53,7 @@
                         <%# <%= @firefly.message.video %>
                     <%# <% end %>
 
-                     <% if @firefly.message.video%>
+                     <% if @firefly.message.video.attached?%>
                       <%# <%= cl_video_tag @firefly.message.video, crop: :fill %>
                       <%= cl_video_tag(@firefly.message.video.key,
                         :loop => true, :controls => true,
@@ -82,7 +82,7 @@
       <div class="show-container-info-grid-comment">
 
       <% if current_user %>
-        <h4>Connect with your friends and send them a message:</h4>
+        <p>Connect with your friends and send them a message:</p>
         <%= simple_form_for [@message, @comment] do |f| %>
           <%= f.input :content, label_html: { class: 'd-none' }, input_html: {id: 'comment_letter', class: 'rounded-8px', placeholder: 'Type here...'}  %>
           <%= hidden_field_tag 'firefly_id', @firefly.id %>
@@ -90,7 +90,7 @@
         <% end %>
         <br>
         <div class="comments-read">
-        <h4>What was said:</h4>
+        <p>What was said:</p>
 
         <% @firefly.message.comments.each do |comment| %>
           <button class='chat-background'><i class="fa-regular fa-user"></i> <h1><%= comment.user.first_name %></h1>:
