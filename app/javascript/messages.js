@@ -3,14 +3,13 @@ const addMail = () => {
   const addMailsContainer = document.querySelector(".add-mails");
   const scrolll = document.querySelector(".messages-cont");
   // const mailTag = `<input type="text" name="emails[]" class="add-mails">`;
-  const mailTag = `<input type="text" name="emails[]" class="add-mails-input">`;
-  console.log("reached")
+  const mailTag = `<input type="text" name="emails[]" class="add-mails-input" placeholder="@">`;
 
   if(addMailsButton) {
     addMailsButton.addEventListener("click", () => {
       addMailsContainer.insertAdjacentHTML("beforeend", mailTag);
       scrolll.scroll(scrolll.scrollHeight, 0)
-      console.log("reached function")
+      console.log("reached function ID")
     });
   }
 }
