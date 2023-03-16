@@ -8,7 +8,7 @@ const addMail = () => {
   if(addMailsButton) {
     addMailsButton.addEventListener("click", () => {
       addMailsContainer.insertAdjacentHTML("beforeend", mailTag);
-      scrolll.scroll(scrolll.scrollHeight, 0)
+      scrolll.scroll(0, scrolll.scrollHeight)
       console.log("reached function ID")
     });
   }

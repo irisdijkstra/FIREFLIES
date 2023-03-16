@@ -59,7 +59,7 @@
 
 #message_letter {
   background: transparent;
-  height: 200px;
+  height: 300px;
   color: white;
   padding: 30px;
   border-radius: 8px;
@@ -88,19 +88,19 @@
 
 #add-mails-btn {
   align-items: center;
-  text-align: center;
+  text-align: end;
   // width: 45px;
   // height: 45px;
   // background: #003152;
   padding: 9px;
+  padding-right: 28px;
   // border-radius: 15px;
   // border-radius: 50px 0px 0px 50px;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 25px;
   line-height: 25px;
   color: #FFFFFF;
   transition: opacity 0.3s ease;
-
   // border-radius: 50%;
   // border: 1px solid rgba(255, 255, 255, 0.8);
 }
@@ -108,6 +108,15 @@
 .all-btns-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 14px;
+  margin-left: 40px;
+  img {
+    margin-right: 18px;
+  }
+}
+
+.send-firefly{
+  margin-top: -5px;
 }
 
 //.media-wrapper input {
@@ -123,4 +132,5 @@
 .btn-back-timeline {
   display: flex;
   justify-content: center;
+  font-weight: bold;
 }
