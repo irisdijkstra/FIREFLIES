@@ -9,7 +9,7 @@ User.destroy_all
 puts 'Creating 10 seeds...'
 first_name = ["paola", "ana", "iris", "evgeniya", "danko"]
 file = "https://wl-brightside.cf.tsp.li/resize/728x/jpg/55e/4fe/090f595ddfa20a96d1c00f6936.jpg"
-index = 1
+index = 0
 
 5.times do
   date = Faker::Date.between(from: '2023-03-04', to: '2023-03-08')
