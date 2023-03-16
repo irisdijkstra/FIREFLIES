@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :messages
+  has_many :comments
   # has_many :fireflies, through: :messages
   ## not necessary for now, maybe later (as you could access the fireflies
-  ## you've send only this way) 
+  ## you've send only this way)
 end

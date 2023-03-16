@@ -31,7 +31,7 @@
     color: white;
     background: #040218da;
     border: 1px solid rgba(200, 200, 200, 0.8);
-    border-radius: 15px;
+    border-radius: 8px;
   }
 }
 
@@ -51,7 +51,7 @@
   height: 331px;
   top: 10px;
   left: 11px;
-  border-radius: 15px;
+  border-radius: 8px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -62,15 +62,16 @@
   height: 200px;
   color: white;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 .media-wrapper{
-  margin-top: 15px;
+  margin-top: 8px;
 }
 
 .row-message {
   overflow: auto;
+  padding: 0;
   // display: grid;
   // grid-template-columns: 1fr 1fr;
   // flex-direction: column;
