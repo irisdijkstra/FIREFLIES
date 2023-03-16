@@ -53,7 +53,7 @@
                         <%# <%= @firefly.message.video %>
                     <%# <% end %>
 
-                     <% if @firefly.message.video%>
+                     <% if @firefly.message.video.attached? %>
                       <%# <%= cl_video_tag @firefly.message.video, crop: :fill %>
                       <%= cl_video_tag(@firefly.message.video.key,
                         :loop => true, :controls => true,
