@@ -85,7 +85,7 @@
         <h4>What was said:</h4>
 
         <% @firefly.message.comments.each do |comment| %>
-          <button class='chat-background'><i class="fa-regular fa-user"></i> <h1><%= User.find_by(email: @firefly.email_recipient).first_name %></h1>:
+          <button class='chat-background'><i class="fa-regular fa-user"></i> <h1><%= comment.user.first_name %></h1>:
           <%= comment.content %></button>
         <% end %>
         </div>
