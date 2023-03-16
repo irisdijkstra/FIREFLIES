@@ -3,6 +3,7 @@
   background-position: center;
   // padding: 300px 0;
   height: 100vh;
+  position: relative;
 }
 
 .banner h1 {
@@ -12,6 +13,15 @@
   font-weight: bold;
   font-family: Open Sans;
   margin-bottom: 56px;
+}
+
+.h1-plus-button {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 
@@ -24,9 +34,14 @@
 }
 
 .container-banner {
-  width: 520px;
-  margin: 0 auto;
-  text-align: center;
+  width: 100vw;
+
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // margin: auto;
+  // text-align: center;
 }
 
 .cta-white:hover {
