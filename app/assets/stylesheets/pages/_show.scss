@@ -141,7 +141,6 @@
 .show-btn-container {
   display: flex;
   justify-content: center;
-  padding-left: 10px;
 }
 
 ////////////////////////////////////////////////
@@ -245,4 +244,8 @@
   color: white;
   padding: 15px;
   border-radius: 8px;
+}
+
+#comment-button {
+  margin-right: 10px;
 }
